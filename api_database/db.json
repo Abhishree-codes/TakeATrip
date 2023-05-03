@@ -1,0 +1,484 @@
+{
+    "hotels": [
+        {
+            "id": 1,
+            "name": "Villa Nautica at Paradise Island",
+            "location": "Maldives",
+            "category": "Beach Vacation",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/cdbee3761b8311ec8b410a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/f348b7a243f311eab9670242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/6608967321242386-77369550_z.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/6608967321242386-4f68c7cb_z.jpg"
+            ],
+            "price": 9511,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Villa Nautica at Paradise Island is a great option for travellers looking out for resort in Maldives. It is located in North Male Atoll.This Resort stands out as one of the highly recommended resort in Maldives and is recommended by 95% of our guests. Resort is rated 4.5 out of 5, which is considered as excellent",
+            "booked": false
+        },
+        {
+            "id": 2,
+            "name": "Kaani Palm Beach",
+            "location": "Maldives",
+            "category": "Beach Beach Vacation",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/5c52aaf0d94611e983820242ac110005.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/7aa49ab0894311ea80210242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/1a3c7ce2894311ea9f3d0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/7efc9dce894311eaa6840242ac110003.jpg"
+            ],
+            "price": 5563,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Kaani Palm Beach is a great choice for travellers looking for a 4 star hotel in Maldives. It is located in Maafushi.This Hotel stands out as one of the highly recommended hotel in Maldives and is recommended by 91% of our guests. Hotel is rated 4.4 out of 5, which is considered as very good.",
+            "booked": false
+        },
+        {
+            "id": 3,
+            "name": "Fushifaru Maldives",
+            "location": "Maldives",
+            "category": "Beach Vacation",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/201812131128261074-513233cc_z.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/bdc064aa09a611e9ab4c0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/48a364f009a711e985640242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/201812131128261074-52563459_z.jpg"
+            ],
+            "price": 17320,
+            "rating": "&#11088 &#11088 &#11088 &#11088 &#11088",
+            "description": "Fushifaru Maldives is a great option for travellers looking out for resort in Maldives. It is located in Lhaviyani Atoll.This Resort stands out as one of the highly recommended resort in Maldives and is recommended by 100% of our guests. Resort is rated 4.0 out of 5, which is considered as very good.",
+            "booked": true
+        },
+        {
+            "id": 4,
+            "name": "Season Paradise Hotel Maldives",
+            "location": "Maldives",
+            "category": "Beach Vacation",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_g/htl-imgs/201703100402163513-1b1dfe53_z.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_g/bc166a961e5911ea9e200242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_g/124c5418639011eab6530242ac110005.jfif",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/201703100402163513-604b3ed7_z.jpg"
+            ],
+            "price": 3379,
+            "rating": "&#11088 &#11088",
+            "description": "Season Paradise Hotel Maldives is a great choice for travellers looking for a 4 star hotel in Maldives. It is located in Thulusdhoo.This Hotel stands out as one of the highly recommended hotel in Maldives and is recommended by 90% of our guests. Hotel is rated 4.3 out of 5, which is considered as very good",
+            "booked": false
+        },
+        {
+            "id": 5,
+            "name": "Adaaran Prestige Vadoo",
+            "location": "Maldives",
+            "category": "Beach Vacation",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/9e4f14c6416f11e9bfdf0242ac110004.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/f3f15502eec811eb837d0a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/6608967321242204-108524a_hb_s_011.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/6608967321242204-7e71dc62fb7e11ebafd60a58a9feac02.jpg"
+            ],
+            "price": 46562,
+            "rating": "&#11088 &#11088 &#11088 &#11088 &#11088",
+            "description": "Adaaran Prestige Vadoo - Premium All Inclusive with Free Transfers is a great option for travellers looking out for resort in Maldives. It is located in South Male Atoll.This Resort stands out as one of the highly recommended resort in Maldives and is recommended by 96% of our guests",
+            "booked": false
+        },
+        {
+            "id": 6,
+            "name": "Hotel Carnation",
+            "location": "Ooty",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/f69dda6a25a511ebbca50242ac110002.jpeg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/room-imgs/201911201442406244-16015-1ce3f56a25bf11eb844f0242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201911201442406244-bf700d4625ba11ebae7f0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201911201442406244-7be90ffa2a2411eb951a0242ac110003.jpg"
+            ],
+            "price": 1900,
+            "rating": "&#11088",
+            "description": "Hotel Carnation is a great choice for travellers looking for a budget accomodation in Ooty. It is located in Near Botanical Garden.This Hotel stands out as one of the highly recommended hotel in Ooty and is recommended by 95% of our guests. Hotel is rated 4.5 out of 5, which is considered as excellent",
+            "booked": true
+        },
+        {
+            "id": 7,
+            "name": "Hotel Lakeview",
+            "location": "Ooty",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/d8ef1f04f7e911eab2f10242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/200701171654373713-75753c4a15ab11eaaee70242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/e63a316e83d911ea96850242ac110005.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/7212935a7b7211e4a4895ee5da2daa2a.jfif"
+            ],
+            "price": 2996,
+            "rating": "&#11088 &#11088",
+            "description": "Hotel Lakeview is a good option for travellers looking out for resort in Ooty. It is located in Central Ooty.This Resort stands out as one of the highly recommended resort in Ooty and is recommended by 89% of our guests. Resort is rated 3.9 out of 5, which is considered as good.",
+            "booked": true
+        },
+        {
+            "id": 8,
+            "name": "Tranqville Resorts",
+            "location": "Ooty",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/211d9e680f1211eda53a0a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/202207291332087574-247db0340f1211edaf000a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/202207291332087574-2bb80a184ac011eda9940a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/202207291332087574-122dcfc44ac011eda3860a58a9feac02.jpg"
+            ],
+            "price": 3444,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Tranqville Resorts is a good option for travellers looking out for resort in Ooty. It is located in Hullathy. Resort is rated 3.9 out of 5, which is considered as good. Some of the popular transit points from Tranqville Resorts are ATC Bus Stand (14.7 kms) and Ooty Bus Station (14.3 kms).",
+            "booked": false
+        },
+        {
+            "id": 9,
+            "name": "Deccan Park",
+            "location": "Ooty",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/64a418268eea11e8a7a00ae8d8079e7e.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/06c6e68c859911ea95390242ac110005.png",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/0d3c3b42ccd911ebb1f80242ac110004.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201009291254212216-5bb5bebe21c511e8a7780a9df65c8753.jpg"
+            ],
+            "price": 5500,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Deccan Park is a great option for travellers looking out for resort in Ooty. It is located in Central Ooty.This Resort stands out as one of the highly recommended resort in Ooty and is recommended by 89% of our guests. Resort is rated 4.0 out of 5, which is considered as very good. The property enjoys a great location advantage and provides easy and fast connectivity to the major transit points of the city."
+        },
+        {
+            "id": 10,
+            "name": "Tulips Elkhill Resorts",
+            "location": "Ooty",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/e0aed7ec256011e885890a9df65c8753.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201707191557005067-a220e7cc256011e88e8302755708f0b3.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/1a54003eb43611e999290a4cef95d023.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/1b16db40b43611e989ad0ac254d2bca4.jpg"
+            ],
+            "price": 4400,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Tulips Elkhill Resorts is a reasonable option for travellers looking out for resort in Ooty. It is located in Fern Hill. Resort is rated 2.9 out of 5, which is considered as average. The property enjoys a great location advantage and provides easy and fast connectivity to the major transit points of the city.",
+            "booked": true
+        },
+        {
+            "id": 11,
+            "name": "Alps Sunshine Regency",
+            "location": "Shimla",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201411071749256087-5deb70f6c71c11ecb8570a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201411071749256087-70588b80e27711edb7400a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201411071749256087-49f811dacfcd11ec90780a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201411071749256087-897cf8fcc71c11ec8bd20a58a9feac02.jpg"
+            ],
+            "price": 4112,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Alps Sunshine Regency is a great choice for travellers looking for a 3 star hotel in Shimla. It is located in Kachi Ghatti.This Hotel stands out as one of the highly recommended hotel in Shimla and is recommended by 100% of our guests.",
+            "booked": true
+        },
+        {
+            "id": 12,
+            "name": "The Grand Welcome Hotel",
+            "location": "Shimla",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201911231318536998-cc0a4cf4616c11eb863d0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/a994e4062bf011ebaef80242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/8818a3f850ad11eba4750242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/c705d63a2bf011eb88670242ac110003.jpg"
+            ],
+            "price": 5111,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "The Grand Welcome Hotel is a great choice for travellers looking for a 4 star hotel in Shimla. It is located in Beolia. Hotel is rated 4.1 out of 5, which is considered as very good.",
+            "booked": false
+        },
+        {
+            "id": 13,
+            "name": "The Hosteller Shimla",
+            "location": "Shimla",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/db0fa840e8a511ecb78d0a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/007c08dae8a611ec9b710a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/2646291ae8a611ec86520a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/2661eca4e8a611eca6b10a58a9feac02.jpg"
+            ],
+            "price": 1379,
+            "rating": "&#11088 &#11088",
+            "description": "The Hosteller Shimla is a great option for travellers looking out for hostel in Shimla. It is located in Mall Road. Hostel is rated 4.0 out of 5, which is considered as very good. The property enjoys a great location advantage and provides easy and fast connectivity to the major transit points of the city.",
+            "booked": false
+        },
+        {
+            "id": 14,
+            "name": "Snow Valley Resorts",
+            "location": "Shimla",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/1de95162354211e5bbab001ec9b85d13.jfif",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201506011832595016-e8c98262e83a11e9a75a0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201506011832595016-8e705590eff911e9a67e0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201506011832595016-70eb4d8ccb4411e5921f5ee5da2daa2a.jpg"
+            ],
+            "price": 5413,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Snow Valley Resorts is a great choice for travellers looking for a 4 star hotel in Shimla. It is located in Kachi Ghatti.This Hotel stands out as one of the highly recommended hotel in Shimla and is recommended by 94% of our guests.",
+            "booked": true
+        },
+        {
+            "id": 15,
+            "name": "Hotel Willow Banks",
+            "location": "Shimla",
+            "category": "Mountains Calling",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/200701120646243660-d326698cb60311e689b002bf5ac07431.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/200701120646243660-a4352e38392a11e7a1be0a9df65c8753.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/7fb484822e2411e996d90242ac110006.png",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/45bc9922b60311e6bfbd0224510f5e5b.jpg"
+            ],
+            "price": 6300,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Hotel Willow Banks is a great choice for travellers looking for a 4 star hotel in Shimla. It is located in Mall Road.This Hotel stands out as one of the highly recommended hotel in Shimla and is recommended by 89% of our guests.",
+            "booked": true
+        },
+        {
+            "id": 16,
+            "name": "Hotel Golden Crown",
+            "location": "Varanasi",
+            "category": "Indian Pilgrimages",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/a33244c281aa11ebab290242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201908281358567854-bafb6ce01dcf11ea8b370242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/851b24be33c511eb8b500242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201908281358567854-dc08a31cd2cf11e98e870242ac110002.jpg"
+            ],
+            "price": 2172,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Hotel Golden Crown is a good choice for travellers looking for a 3 star hotel in Varanasi. It is located in Benia Bagh. Hotel is rated 3.5 out of 5, which is considered as good",
+            "booked": false
+        },
+        {
+            "id": 17,
+            "name": "The Westinn",
+            "location": "Varanasi",
+            "category": "Indian Pilgrimages",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/dcda17325cfd11e9be580242ac110006.png",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/be9561966f1511e795bd025f77df004f.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/8d34fc746f1511e7b2050a4cef95d023.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/e2bcbccc5cfd11e9a1220242ac110002.png"
+            ],
+            "price": 2587,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "The Westinn is a good choice for travellers looking for a 3 star hotel in Varanasi. It is located in Varanasi Cantonment. Hotel is rated 3.6 out of 5, which is considered as good.",
+            "booked": false
+        },
+        {
+            "id": 18,
+            "name": "Ganga Darshnam Guest House",
+            "location": "Varanasi",
+            "category": "Indian Pilgrimages",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/bd73e9e015a711eb94150242ac110004.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/44b7092e18cc11eb8d640242ac110002.jfif",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201906041503179940-fd19643a8ac911ea95340242ac110006.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201906041503179940-0db4c3e086a511e9a8990242ac110004.jpg"
+            ],
+            "price": 4500,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Ganga Darshnam Guest House is a good choice for travellers looking for a budget accomodation in Varanasi. It is located in Dashwasamedh Ghat . ",
+            "booked": true
+        },
+        {
+            "id": 19,
+            "name": "Hotel Exotic",
+            "location": "Amritsar",
+            "category": "Indian Pilgrimages",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201909151931065796-3723f2ea24da11eaae370242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201909151931065796-9f911d3c589e11eb8a890242ac110004.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/6d6f60c8191311ea97bd0242ac110003.jpeg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/2d686438ffab11e9a88b0242ac110003.jpg"
+            ],
+            "price": 2442,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Hotel Exotic is a great choice for travellers looking for a 3 star hotel in Amritsar. It is located in Near Golden Temple.This Hotel stands out as one of the highly recommended hotel in Amritsar and is recommended by 94% of our guests.",
+            "booked": false
+        },
+        {
+            "id": 20,
+            "name": "Comfort Inn Alstonia",
+            "location": "Amritsar",
+            "category": "Indian Pilgrimages",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/1bd6abf845ea11ec917b0a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/200909011629307923-8710153a45ef11eca5c20a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/16d5d0be10cf11e4bf52daf4768ad8d9.jfif",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/200909011629307923-1fea8d6845ef11eca0c90a58a9feac02.jpg"
+            ],
+            "price": 3315,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Comfort Inn Alstonia is a great choice for travellers looking for a 4 star hotel in Amritsar. It is located in Ranjit Avenue.This Hotel stands out as one of the highly recommended hotel in Amritsar and is recommended by 92% of our guests.",
+            "booked": true
+        },
+        {
+            "id": 21,
+            "name": "Leonardo Hotel Amsterdam Rembrandtpark",
+            "location": "Amsterdam",
+            "category": "Party Destination",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/6608967321235217-661418e7_z.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/6608967321235217-a2c78cf4_z.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/6608967321235217-e469e159_z.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/6608967321235217-98bd1737_z.jpg"
+            ],
+            "price": 16551,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Leonardo Hotel Amsterdam Rembrandtpark is a great choice for travellers looking for a 4 star hotel in Amsterdam. It is located in Amsterdam-West.This Hotel stands out as one of the highly recommended hotel in Amsterdam and is recommended by 91% of our guests",
+            "booked": false
+        },
+        {
+            "id": 22,
+            "name": "Generator Amsterdam",
+            "location": "Amsterdam",
+            "category": "Party Destination",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/1ed3a94e472411ea93890242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/201710241339362152-7a230148_z.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/6d91bde2faa911e79f3f0a9df65c8753.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/201710241339362152-5d584856_z.jpg"
+            ],
+            "price": 22691,
+            "rating": "&#11088 &#11088 &#11088",
+            "description": "Generator Amsterdam is a great option for travellers looking out for villa in Amsterdam. It is located in Watergraafsmeer.This Villa stands out as one of the highly recommended villa in Amsterdam and is recommended by 88% of our guests",
+            "booked": true
+        },
+        {
+            "id": 23,
+            "name": "ZIVA SUITES",
+            "location": "Goa",
+            "category": "Party Destination",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/16a6e21025dc11e887b00224510f5e5b.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/48176b1a759711e9a3ba0242ac110004.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/fd5e4594755011e997640242ac110006.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/482bbfe8759711e9bfa30242ac110005.jpg"
+            ],
+            "price": 3711,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "ZIVA SUITES, a Boutique Hotel is a great option for travellers looking out for resort in Goa. It is located in Siolim. This Resort stands out as one of the highly recommended resort in Goa and is recommended by 96% of our guests.",
+            "booked": true
+        },
+        {
+            "id": 24,
+            "name": "Sonesta Inn",
+            "location": "Goa",
+            "category": "Party Destination",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/20080611094907708-9e0c7318d20711e9abfa0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/e02ea7c88fed11edaa0a0a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/20080611094907708-7f193b221b3911eba1f40242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/20080611094907708-562595ae1b3811eba76b0242ac110002.jpg"
+            ],
+            "price": 5928,
+            "rating": "&#11088 &#11088 &#11088 &#11088 &#11088",
+            "description": "Sonesta Inn is a great option for travellers looking out for resort in Goa. It is located in Candolim. This Resort stands out as one of the highly recommended resort in Goa and is recommended by 94% of our guests.",
+            "booked": true
+        },
+        {
+            "id": 25,
+            "name": "Hotel Palash Regency",
+            "location": "Udaipur",
+            "category": "Stay Like Royals",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/f3d45d047c1b11ec90c60a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/202111021053216454-e1331fae78f211eca0180a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/202111021053216454-8f6facbc865011ecaf780a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/202111021053216454-0b84d51478f211ec88990a58a9feac02.jpg"
+            ],
+            "price": 1993,
+            "rating": "&#11088 &#11088 &#11088 &#11088 ",
+            "description": "Hotel Palash Regency is a great choice for travellers looking for a 4 star hotel in Udaipur. It is located in Near Udaipur Train Station.This Hotel stands out as one of the highly recommended hotel in Udaipur and is recommended by 98% of our guests.",
+            "booked": false
+        },
+        {
+            "id": 26,
+            "name": "Gazebo Resort & Spa",
+            "location": "Udaipur",
+            "category": "Stay Like Royals",
+            "image": [
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/201811161039194515-9da3961008bc11ed98000a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/1fe559d4e63411ecaffd0a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/f1ed0872ec7511ecbeb90a58a9feac02.jpeg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/ccb31c68be5111e999340242ac110002.jpg"
+            ],
+            "price": 1857,
+            "rating": "&#11088 &#11088",
+            "description": "Gazebo Resort & Spa ( 4km From Lake Pichola) is a good option for travellers looking out for resort in Udaipur. It is located in Near Lake Pichola.",
+            "booked": false
+        },
+        {
+            "id": 27,
+            "name": "Movenpick Hotel",
+            "location": "Dubai",
+            "category": "Stay Like Royals",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/9c7aed3071da11eb9c700242ac110006.jfif",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/bc4a2cd4976311e7ad9c0a4cef95d023.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/117ae27671da11ebbf320242ac110003.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/4190725563792659-944ce7b6_z.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/4190725563792659-11bfc155_z.jpg"
+            ],
+            "price": 6325,
+            "rating": "&#11088 &#11088 &#11088 &#11088 &#11088",
+            "description": "Movenpick Hotel & Apartments Bur Dubai is a great choice for travellers looking for a 5 star hotel in Dubai. It is located in Bur Dubai.This Hotel stands out as one of the highly recommended hotel in Dubai and is recommended by 91% of our guests.",
+            "booked": false
+        },
+        {
+            "id": 28,
+            "name": "Taj Dubai",
+            "location": "Dubai",
+            "category": "Stay Like Royals",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/f6d80aca3ffa11ed9efa0a58a9feac02.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/eca580c4be2111e7859e0a4cef95d023.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/b1581904495511e89d590a2554fd66fc.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/f7ca67b2be2111e7830d0a4cef95d023.jpg"
+            ],
+            "price": 12796,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Taj Dubai is a great choice for travellers looking for a 5 star hotel in Dubai. It is located in Downtown Dubai.This Hotel stands out as one of the highly recommended hotel in Dubai and is recommended by 97% of our guests.",
+            "booked": false
+        },
+        {
+            "id": 29,
+            "name": "Majestic City Retreat Hotel",
+            "location": "Dubai",
+            "category": "Stay Like Royals",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/7a28b38a4c6011e9b3c60242ac110003.jfif",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/dfeb2b161f0211e998680242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt_ext/t_fs/htl-imgs/4190725563792785-666b6a1a_z.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/e235663e4c6611e998f90242ac110002.jpg"
+            ],
+            "price": 2516,
+            "rating": "&#11088 &#11088 &#11088 &#11088",
+            "description": "Majestic City Retreat Hotel is a great choice for travellers looking for a 4 star hotel in Dubai. It is located in Bur Dubai.This Hotel stands out as one of the highly recommended hotel in Dubai and is recommended by 93% of our guests.",
+            "booked": false
+        },
+        {
+            "id": 30,
+            "name": "Atlantis, The Palm",
+            "location": "Dubai",
+            "category": "Stay Like Royals",
+            "image": [
+                "https://cdn1.goibibo.com/voy_ing/t_fs/80baeba80def11eb964c0242ac110002.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/4190725563792411-13f73e8cd91811eb80260242ac110009.jpg",
+                "https://cdn1.goibibo.com/voy_ing/t_fs/fc4b1b3e3d5711eb8ad00242ac110005.jpg",
+                "https://cdn1.goibibo.com/voy_mmt/t_fs/htl-imgs/4190725563792411-1d3b3a205ebc11eabbf30242ac110004.jpg"
+            ],
+            "price": 36019,
+            "rating": "&#11088 &#11088 &#11088 &#11088 &#11088",
+            "description": "Atlantis, The Palm is a great choice for travellers looking for a 5 star hotel in Dubai. It is located in Palm Jumeirah.This Hotel stands out as one of the highly recommended hotel in Dubai and is recommended by 95% of our guests.",
+            "booked": false
+        }
+    ]
+}
