@@ -1,0 +1,235 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+} 
+/* body{
+  background-color: #f15f5c;
+}  */
+
+
+#log-div{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E22901;
+margin-top: 20px;
+  width: 260px;
+height: 50px;
+border-radius: 50px;
+box-shadow: -10px 6px;
+
+}
+
+  button{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+ color: beige;
+    width: 120px;
+    height: 40px;
+  }
+  #b1{
+    background-color: black;
+  }
+  #b2{
+    background-color: #E22901;
+  }
+  footer{
+position: relative;
+width: 90%;
+margin: auto;
+background-color:#dd6765;
+padding: 50px 100px;
+
+font-weight: bold;
+  }
+  footer .container1{
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  footer .container1 .sec h2 {
+position: relative;
+color: #333;
+font-weight: 600;
+margin-bottom: 15px;
+  }
+  footer .container1 .sec p{
+    color: #564f4f;
+  }
+  footer .container1 .links{
+    position: relative;
+  }
+
+
+  footer .container1 .links ul li{
+    list-style: none;
+  }
+
+  
+  footer .container1 .links ul li a{
+   color: #564f4f;
+   text-decoration: none;
+   margin-bottom: 10px;
+   display: inline-block;
+  }
+
+  
+  
+  .h4tag:hover {
+
+    font-size: 30px;
+  }
+  .menu-btn {
+    display: block;
+   
+    width: 50px;
+    height: 40px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: rgb(59, 55, 55);
+    cursor: pointer;
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+  align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    font-weight: bold;
+  }
+  .circle {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 50%;
+  border: 2px solid;
+  text-align: center;
+  
+    
+  }
+  
+  nav ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    width: 40%;
+    
+  }
+  nav li,a{
+    list-style: none;
+    text-decoration: none;
+    color: #564f4f;
+  }
+  
+  .burgerMenu{
+    
+    display: none  }
+    
+    .menu-btn:hover{
+      
+      background-color: black;;
+      color: beige;
+      
+    }
+    
+    .burgerMenu {
+      display: none;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      background-color:black; ;
+      position: absolute;
+      top: 3rem;
+      right: 9rem;
+      border-radius: 40px;   }
+      
+      .burgerMenu a {
+        display: block;
+      padding: 10px 15px;
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+    }
+    .burgerMenu a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .cross{
+      position: absolute;
+      top: 5px;
+      right: 90px;
+      cursor: pointer;
+    }
+    
+      @media screen and (max-width: 1052px) {
+        footer{
+          padding: 40px;
+        }
+        footer .container1 {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 2fr 1fr ;
+          gap: 20px;
+      }
+    
+        
+       
+      @media screen and (max-width: 732px) {
+        
+      
+        nav ul{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+      gap: 10px;
+          width: 40%;
+      
+        }
+
+        .burgerMenu {
+          display: none;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: column;
+          background-color:black; ;
+          position: absolute;
+          top: 5.8rem;
+          right: 6rem;
+          border-radius: 40px;   }
+       
+      }
+      }
+      @media screen and (max-width: 606px) {
+        
+        footer .container1 {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr ;
+          gap: 20px;
+      }
+      nav ul{
+      
+        grid-template-columns: repeat(1,1fr);
+      }
+      nav {
+ 
+    padding: 40px;
+}
+.burgerMenu {
+ 
+  top: 5rem;
+  right: 2rem;
+     }
+
+
+       
+      } 
+    
