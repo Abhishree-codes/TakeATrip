@@ -11,7 +11,7 @@
   }
   @font-face {
     font-family: "Sigmar";
-    src: url("Sigmar_One/SigmarOne-Regular.ttf");
+    src: url("Sigmar_one/SigmarOne-Regular.ttf");
   }
   .cont {
     width: 100%;
@@ -799,4 +799,10 @@
     background-size: 30px 30px;
     z-index: -1;
   } */
+
+  @media screen and (max-width: 1042px) {
+    .banner-text .heading{
+      font-size: 80px;
+    }
+  }
   
