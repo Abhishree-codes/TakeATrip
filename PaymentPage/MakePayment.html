@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Payment</title>
+
+    <link rel="stylesheet" href="MakePayment.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col">
+
+                    <!-- Billing Address -->
+                    <h3 class="title">billing address</h3>
+
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input type="text" placeholder="Full Name" id="name">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" placeholder="example@example.com" id="email">
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder="Street - Locality" id="address">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="Muzaffarnagar" id="city">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input type="text" placeholder="Utttar Pradesh" id="state">
+                        </div>
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" placeholder="251306" id="pincode">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Details -->
+                <div class="col">
+                    <div class="col">
+
+                        <h3 class="title">payment</h3>
+
+                        <div class="inputBox">
+                            <span>cards accepted :</span>
+                            <img src="card_img.png" alt="">
+                        </div>
+                        <div class="inputBox">
+                            <span>name on card :</span>
+                            <input type="text" placeholder="Nikhil Kumar" id="cardName">
+                        </div>
+                        <div class="inputBox">
+                            <span>credit card number :</span>
+                            <input type="number" placeholder="1111-2222-3333-4444" id="cardNumber">
+                        </div>
+                        <div class="inputBox">
+                            <span>exp month :</span>
+                            <input type="text" placeholder="Month" id="expMonth">
+                        </div>
+
+                        <div class="flex">
+                            <div class="inputBox">
+                                <span>exp year :</span>
+                                <input type="number" placeholder="2023" id="expYear">
+                            </div>
+                            <div class="inputBox">
+                                <span>CVV :</span>
+                                <input type="text" placeholder="1234" id="cvv">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" onclick="setTimeout(openPopup, 3000)" value="proceed to checkout"
+                    class="submit-btn">
+
+        </form>
+    </div>
+
+    <!-- Payment Successfull Popup -->
+    <div class="main">
+        <div class="main">
+            <div class="popup">
+                <img
+                    src="https://www.clipartkey.com/mpngs/m/153-1530386_success-png-image-png-download-transparent-background-green.png">
+                <h2>Payment Successful !</h2>
+                <p>Thanks For Shopping From ShopV</p>
+                <button type="button" onclick="closePopup()"><a href="PaymentDetails.html">View Details</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="MakePayment.js"></script>
+
+</html>
