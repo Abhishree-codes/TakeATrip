@@ -1,0 +1,41 @@
+body {
+    background-color: antiquewhite;
+}
+
+table,
+div,
+tr,
+td,
+h1 {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+div {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    background: #fff;
+}
+
+table {
+    width: 100%;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+}
