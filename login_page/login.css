@@ -1,0 +1,262 @@
+
+body{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    background-image: url(img/ladies\ care\ \(1\).gif);
+    padding-top: 50px;
+}
+
+#main{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    background-color: #ea9d4e;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#imgDiv{
+    width: 35%;
+    margin: 30px -20px 30px 30px;
+    
+}
+#imgDiv>img{
+    width: 100%;
+    height: 79vh;
+    
+  
+}
+#detail>div>a{
+    margin-right: 30px;
+    
+}
+
+
+#detail{
+    margin: 30px;
+    /* border:1px solid red; */
+    width: 70%;
+    background-image:url(img/loginPageBackGroundTexture.jpg);
+    border-radius: 10px;
+    height: 550px;
+    
+}
+
+#detail>div{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    
+}
+#detail>:nth-child(3){
+   gap: 30px;
+
+}
+
+#detail>:nth-child(2)>img{
+  width: 150px;
+  
+ }
+
+ #detail>:nth-child(2){
+    
+    text-align: center;
+   }
+
+#detail>:nth-child(1){
+    
+     padding-top: 10px;
+     
+}
+#signupText{
+    color: red;
+}
+#signinText{
+    color: red;
+}
+
+#input{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+#input>input{
+    height: 30px;
+    border-radius: 5px;
+}
+#button{
+    height: 30px;
+    width: 30%;
+    margin: auto;
+    border-radius: 5px;
+}
+/* new */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4c084;
+}
+
+.logo,
+p {
+    margin: 15px auto;
+    text-align: center;
+}
+
+.container {
+    width: 30%;
+    margin: auto;
+    margin-top:2rem !important;
+    padding: 40px;
+    border-radius: 20px;
+    border: 8px solid #ea9d4e;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.35),
+        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 55%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.container .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container .form.signin,
+.container.signinForm .form.signup {
+    display: none;
+}
+
+.container.signinForm .form.signin {
+    display: flex;
+}
+
+.container .form h2 {
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.container .form .inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.container .form .inputBox input {
+    padding: 12px 10px 12px 48px;
+    width: 100%;
+    background: #ea9d4e;
+    border: 1px solid red;
+    color: #fff;
+    font-weight: 300;
+    border-radius: 25px;
+    font-size: 1em;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.35);
+    transition: 0.4s;
+}
+
+.container .form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 12px 10px 12px 48px;
+    pointer-events: none;
+    font-size: 1em;
+    font-weight: 300;
+    transition: 0.4s;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.container .form .inputBox input:valid~span,
+.container .form .inputBox input:focus~span {
+    color: white;
+    border: 1px solid red;
+    background: #ea9d4e;
+    color: white;
+    transform: translateX(25px) translateY(-7px);
+    font-size: 0.6em;
+    padding: 0 8px;
+    border-radius: 10px;
+    letter-spacing: 0.1em;
+}
+
+.container .form .inputBox input:valid,
+.container .form .inputBox input:focus {
+    border: 1px solid palevioletred;
+}
+
+.container .form .inputBox input[type="submit"] {
+    background: #ea9d4e;
+    color: white;
+    padding: 10px 0;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.35),
+        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.container .form p {
+    color: green;
+    font-size: 0.75em;
+    font-weight: 300;
+}
+
+.container .form p a {
+    font-weight: 500;
+    color: palevioletred;
+    text-decoration: none;
+}
+
+/* Spinner */
+
+.spinner {
+    display: none;
+    margin-left: 45%;
+    margin-top: 130px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid white;
+    border-top-color: palevioletred;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
