@@ -1,103 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
     <title>Document</title>
-<link rel="stylesheet" href="styles/normalize.css" />
-  <link rel="stylesheet" href="styles/skeleton.css" />
-  <link rel="stylesheet" href="styles/style.css" />
-</head>
-<body>
-    
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/skeleton.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div>
+      <h2>TakeATrip</h2>
+  </div>
+  <div>
+      <a href="#"><span class="circle">DISCOVER</span></a>
+      <a href="#">ABOUT</a>
+     <a href="#">LOCATION</a>
+      <a href="#">REVIEW</a>
+  </div>
+  
+  <div id="myLinks">
+      
+      <button class="menu-btn">&#9776;</button>
+      <div class="burgerMenu">
+          <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <p class="cross">&#9587</p>
+      </div>
+        </a>
+    </div>
+</nav>
     <div class="container">
-        <div class="row">
-          <div class="column">
-            <h1>Hotels Data</h1>
-          </div>
+      <div class="row">
+        <div class="column">
+          <h1>Hotels Data</h1>
         </div>
-    
-        <div class="row">
-          <div class="columns four sidebar-one" id="sidebar-one">
-    
-            <h4>Add Hotel</h4>
-            <input type="text" id="book-title" class="u-full-width" placeholder="Name" />
-            <input type="text" id="book-image" class="u-full-width" placeholder="Image Url" />
-            <input type="text" id="book-category" class="u-full-width" placeholder="Category" />
-            <input type="text" id="book-author" class="u-full-width" placeholder="Description" />
-            <input type="number" id="book-price" class="u-full-width" placeholder="Price" />
-            <button id="add-book" class="u-full-width button button-primary">
-              Add Hotel
+      </div>
+
+      <div class="row">
+        <div class="columns four sidebar-one" id="sidebar-one">
+          <h4>See User Data</h4>
+          <button id="fetch-users" class="u-full-width button button-primary">
+            Get User Data
+          </button>
+          <hr />
+          <h4 id="fetch-trips-heading" style="display: none">See Trips Data</h4>
+          <button
+            id="fetch-trips"
+            class="u-full-width button button-primary"
+            style="display: none"
+          >
+            Get Trip Data
+          </button>
+          <hr id="fetch-trips-break" style="display: none" />
+          <select id="sort-by-bookings" style="display: none">
+            <option value="">Sort By No. of Bookings</option>
+            <option value="sort-low-to-high">Sort Low To High</option>
+            <option value="sort-high-to-low">Sort High To Low</option>
+          </select>
+          <hr id="sort-by-bookings-break" style="display: none" />
+          <select id="sort-by-name" style="display: none">
+            <option value="">Sort Alphabetically</option>
+            <option value="sort-low-to-high">Sort Low To High</option>
+            <option value="sort-high-to-low">Sort High To Low</option>
+          </select>
+          <hr id="sort-by-name-break" style="display: none" />
+          <select id="filter-by-booked" style="display: none">
+            <option value="">Filter By Booked</option>
+            <option value="true">Booked</option>
+            <option value="false">No Bookings</option>
+          </select>
+          <hr id="filter-by-booked-break" style="display: none" />
+          <h4>Add Trip</h4>
+          <input
+            type="text"
+            id="book-title"
+            class="u-full-width"
+            placeholder="Name"
+          />
+          <input
+            type="text"
+            id="book-image"
+            class="u-full-width"
+            placeholder="Image Url"
+          />
+          <input
+            type="text"
+            id="book-category"
+            class="u-full-width"
+            placeholder="Category"
+          />
+          <input
+            type="text"
+            id="book-author"
+            class="u-full-width"
+            placeholder="Description"
+          />
+          <input
+            type="number"
+            id="book-price"
+            class="u-full-width"
+            placeholder="Price"
+          />
+          <input
+            type="text"
+            id="book-location"
+            class="u-full-width"
+            placeholder="Location"
+          />
+          <button id="add-book" class="u-full-width button button-primary">
+            Add Trip
+          </button>
+          <hr />
+
+          <h4>Update all fields of A Trip</h4>
+          <input
+            type="text"
+            id="update-book-id"
+            class="u-full-width"
+            placeholder="ID"
+          />
+          <input
+            type="text"
+            id="update-book-title"
+            class="u-full-width"
+            placeholder="Name"
+          />
+          <input
+            type="text"
+            id="update-book-image"
+            class="u-full-width"
+            placeholder="Image Url"
+          />
+          <input
+            type="text"
+            id="update-book-category"
+            class="u-full-width"
+            placeholder="Category"
+          />
+          <input
+            type="text"
+            id="update-book-author"
+            class="u-full-width"
+            placeholder="Description"
+          />
+
+          <input
+            type="number"
+            id="update-book-price"
+            class="u-full-width"
+            placeholder="Price"
+          />
+          <input
+            type="text"
+            id="update-book-location"
+            class="u-full-width"
+            placeholder="Location"
+          />
+          <button id="update-book" class="u-full-width button button-primary">
+            Update all fields
+          </button>
+          <hr />
+
+          <h4>Update only Price</h4>
+          <input
+            type="text"
+            id="update-price-book-id"
+            class="u-full-width"
+            placeholder="ID"
+          />
+          <input
+            type="number"
+            id="update-price-book-price"
+            class="u-full-width"
+            placeholder="Price"
+          />
+          <button
+            id="update-price-book"
+            class="u-full-width button button-primary"
+          >
+            Update Hotel Price
+          </button>
+          <hr />
+          <select id="sort">
+            <option value="">Sort Based On Price</option>
+            <option value="sort-low-to-high">Sort Low To High</option>
+            <option value="sort-high-to-low">Sort High To Low</option>
+          </select>
+          <hr />
+          <select id="filter-by-category">
+            <option value="">Filter By Category</option>
+            <option
+              value="Stay Like Royals"
+              class="u-full-width button button-primary"
+            >
+              Stay Like Royals
+            </option>
+            <option
+              value="Party Destination"
+              class="u-full-width button button-primary"
+            >
+              Party Destination
+            </option>
+            <option
+              value="Indian Pilgrimages"
+              class="u-full-width button button-primary"
+            >
+              Indian Pilgrimages
+            </option>
+            <option
+              value="Mountains Calling"
+              class="u-full-width button button-primary"
+            >
+              Mountains Calling
+            </option>
+            <option
+              value="Beach Vacation"
+              class="u-full-width button button-primary"
+            >
+              Beach Vacation
+            </option>
+          </select>
+          <hr />
+          <!-- filterbasedonlocation  -->
+          <select id="filter-by-location">
+            <option value="">Filter By Location</option>
+            <option value="Ooty">Ooty</option>
+            <option value="Shimla">Shimla</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Goa">Goar</option>
+            <option value="Amsterdam">Amsterdam</option>
+            <option value="Udaipur">Udaipur</option>
+            <option value="Dubai">Dubai</option>
+          </select>
+          <hr />
+        </div>
+        <div class="columns eight main">
+          <div class="search-book-wrapper" id="search-book-wrapper">
+            <select id="search-by-select">
+              <option value="">Search By</option>
+              <option value="title">Name</option>
+              <option value="author">Location</option>
+            </select>
+            <input
+              type="text"
+              id="search-by-input"
+              placeholder="Enter Name/Location here"
+            />
+            <button
+              id="search-by-button"
+              style="background-color: #33c3f0; color: white; border: none"
+            >
+              Search
             </button>
-            <hr />
-    
-            <h4>update all fields of Hotel</h4>
-            <input type="text" id="update-book-id" class="u-full-width" placeholder="ID" />
-            <input type="text" id="update-book-title" class="u-full-width" placeholder="Name" />
-            <input type="text" id="update-book-image" class="u-full-width" placeholder="Image Url" />
-            <input type="text" id="update-book-author" class="u-full-width" placeholder="Description" />
-            <input type="text" id="update-book-category" class="u-full-width" placeholder="Category" />
-            <input type="number" id="update-book-price" class="u-full-width" placeholder="Price" />
-            <button id="update-book" class="u-full-width button button-primary">
-              Update all fields
-            </button>
-            <hr />
-    
-            <h4>update only Price</h4>
-            <input type="text" id="update-price-book-id" class="u-full-width" placeholder="ID" />
-            <input type="number" id="update-price-book-price" class="u-full-width" placeholder="Price" />
-            <button id="update-price-book" class="u-full-width button button-primary">
-              Update Hotel Price
-            </button>
-            <hr />
-    
-            <h4>Sort Based On Price</h4>
-            <button id="sort-low-to-high" class="u-full-width button button-primary">
-              Sort Low To High
-            </button>
-            <button id="sort-high-to-low" class="u-full-width button button-primary">
-              Sort High To Low
-            </button>
-            <hr />
-    
-            <h4>Filter Based On Category </h4>
-            <button id="filter-Royals" class="u-full-width button button-primary">
-            Stay Like Royals
-            </button>
-            <button id="filter-Party" class="u-full-width button button-primary">
-                Party Destination
-            </button>
-            <button id="filter-Pilgrimages" class="u-full-width button button-primary">
-                Indian Pilgrimages
-            </button>
-            <button id="filter-Mountains" class="u-full-width button button-primary">
-                Mountains Calling
-            </button>
-            <button id="filter-Vacation" class="u-full-width button button-primary">
-                Beach Vacation
-            </button>
-           
           </div>
-    
-          <div class="columns eight main">
-            <div class="search-book-wrapper" id="search-book-wrapper">
-              <select id="search-by-select" >
-                <option value="">Search By</option>
-                <option value="title">Name</option>
-                <option value="author">Location</option>
-              </select>
-              <input type="text"  id="search-by-input" placeholder="Enter Name/Location here" >
-              <button id="search-by-button" style="background-color: #33c3f0 ;color: white;border: none;">Search</button>
-    
-            </div>
-            <div class="data-list-wrapper" id="data-list-wrapper">
-              <!-- append card-list that includes card here -->
-            </div>
+          <div class="data-list-wrapper" id="data-list-wrapper">
+            <!-- append card-list that includes card here -->
           </div>
         </div>
       </div>
+      <div id="pagination"></div>
+    </div>
     
-      <script src="./scripts/admin.js" type="module"></script>
-    </body>
+    <script src="./scripts/admin.js" type="module"></script>
+  </body>
 </html>

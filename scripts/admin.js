@@ -1,18 +1,18 @@
-
-const baseServerURL = "https://api-by-nikhil.onrender.com"
-
-
-
+const baseServerURL = "https://api-by-nikhil.onrender.com";
 
 const bookURL = `${baseServerURL}/hotels`;
-let mainSection = document.getElementById("data-list-wrapper");
+const userURL = `${baseServerURL}/users`;
 
+let mainSection = document.getElementById("data-list-wrapper");
+let paginationDiv = document.getElementById("pagination");
 // hotel
 let bookTitleInput = document.getElementById("book-title");
 let bookImageInput = document.getElementById("book-image");
 let bookCategoryInput = document.getElementById("book-category");
 let bookAuthorInput = document.getElementById("book-author");
 let bookPriceInput = document.getElementById("book-price");
+let bookLocationInp = document.getElementById("book-location");
+
 let bookCreateBtn = document.getElementById("add-book");
 
 // Update hotel
@@ -22,6 +22,7 @@ let updateBookImageInput = document.getElementById("update-book-image");
 let updateBookAuthorInput = document.getElementById("update-book-author");
 let updateBookCategoryInput = document.getElementById("update-book-category");
 let updateBookPriceInput = document.getElementById("update-book-price");
+let updateBookLocationInput = document.getElementById("update-book-location");
 let updateBookBtn = document.getElementById("update-book");
 
 //Update hotel
@@ -30,333 +31,647 @@ let updatePriceBookPrice = document.getElementById("update-price-book-price");
 let updatePriceBookPriceButton = document.getElementById("update-price-book");
 
 //sort and filter
-let sortAtoZBtn = document.getElementById("sort-low-to-high");
-let sortZtoABtn = document.getElementById("sort-high-to-low");
-let filterRoyals = document.getElementById("filter-Royals");
-let filterParty = document.getElementById("filter-Party");
-let filterPilgrimages = document.getElementById("filter-Pilgrimages");
-let filterMountains = document.getElementById("filter-Mountains");
-let filterVacation = document.getElementById("filter-Vacation");
-
+let sortByPrice = document.getElementById("sort");
+let filterByCategory = document.getElementById("filter-by-category");
+let filterByLocation = document.getElementById("filter-by-location");
 //Search by title/author
 
 let searchBySelect = document.getElementById("search-by-select");
 let searchByInput = document.getElementById("search-by-input");
 let searchByButton = document.getElementById("search-by-button");
 
+//get user data
+
+let getUserDatabtn = document.getElementById("fetch-users");
+
+//get trips data
+
+let getTripsDatabtn = document.getElementById("fetch-trips");
+let getTripsDataheading = document.getElementById("fetch-trips-heading");
+let getTripsDatabreak = document.getElementById("fetch-trips-break");
+
 // //Books Data
 // let booksData = [];
 
-window.addEventListener("load",()=>{
-fetchData()
-})
+//sort and filter for users
 
-function fetchData(){
-  fetch(bookURL).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    getCardList(data)
-  }).catch((error)=>{
-    console.log(error)
-  })
+let sortByBookings=document.getElementById("sort-by-bookings")
+let sortByBookingLineBreak=document.getElementById("sort-by-bookings-break")
+
+let sortByName=document.getElementById("sort-by-name")
+let sortByNameLineBreak=document.getElementById("sort-by-name-break")
+
+
+let filterByBooked=document.getElementById("filter-by-booked")
+let filterByBookedLineBreak=document.getElementById("filter-by-booked-break")
+
+
+
+
+window.addEventListener("load", () => {
+  fetchData();
+});
+
+let fetched_data = [];
+let currentPage = 1;
+function fetchData() {
+  fetch(bookURL)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      fetched_data = [...data];
+
+      //getCardList(data);
+      renderData(1, fetched_data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
-function getCardList(data){
-  mainSection.innerHTML=""
-  let cardList=document.createElement("div")
-  cardList.className="card-list"
+function renderData(currentPage, arr) {
+  let startInd = (currentPage - 1) * 10;
+  let endInd = startInd + 10;
+  let itemsToShow = arr.slice(startInd, endInd);
+  getCardList(itemsToShow);
 
-  cardList.innerHTML=""
+  let totalPages = Math.ceil(arr.length / 10);
 
-  for(let i=0; i<data.length; i++){
-    cardList.append(createCard(data[i],i))
+  paginationDiv.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    paginationDiv.append(createButton(i));
   }
-  mainSection.append(cardList)
 }
 
-function createCard(item,i){
-  let card=document.createElement("div")
-  card.className="card"
-  card.setAttribute("data-id",item.id)
+function createButton(i) {
+  let btn = document.createElement("button");
+  btn.innerText = i;
 
-  let imgDiv=document.createElement("div")
-  imgDiv.className="card__img"
-
-  let image=document.createElement("img")
-  image.src=item.image[0]
-  image.setAttribute("alt","book")
-
-  imgDiv.append(image)
-
-  let cardBody=document.createElement("div")
-  cardBody.className="card-body"
-
-  let h4=document.createElement("h4")
-  h4.className="card-title"
-  h4.innerText=item.name
-
-  let p1=document.createElement("p")
-  p1.className="card-author"
-  p1.innerText=item.location
-
-  let p2=document.createElement("p")
-  p2.className="card-category"
-  p2.innerText=item.category
-
-  let p3=document.createElement("p")
-  p3.className="card-price"
-  p3.innerText=item.price
-
-  let a=document.createElement("a")
-  a.href="#"
-  a.setAttribute("data-id",item.id)
-  a.className="card-link"
-  a.innerText="Edit"
-
-  a.addEventListener("click",(e)=>{
-    e.preventDefault()
-    populate(item)
-    populateOnlyPrice(item)
-  })
-
-  let btn=document.createElement("button")
-  btn.setAttribute("data-id",item.id)
-  btn.className="card-button"
-  btn.innerText="Delete"
-
-  btn.addEventListener("click",(e)=>{
-    e.preventDefault()
-    deleteBook(item)
-    
-  })
-
-  cardBody.append(h4, p1,p2,p3,a,btn)
-  card.append(imgDiv,cardBody)
-
-  return card
+  btn.addEventListener("click", () => {
+    updateValues(i);
+  });
+  return btn;
 }
 
-bookCreateBtn.addEventListener("click",(e)=>{
-  e.preventDefault()
-  addNewBooks()
-})
+function paginateData(page, arr) {
+  currentPage = page;
+  renderData(currentPage, arr);
+}
 
-function addNewBooks(){
-  fetch(bookURL,{
-    method:"POST",
-    headers:{
-      "Content-type":"application/json"
+function getCardList(data) {
+  mainSection.innerHTML = "";
+  let cardList = document.createElement("div");
+  cardList.className = "card-list";
+
+  cardList.innerHTML = "";
+
+  for (let i = 0; i < data.length; i++) {
+    cardList.append(createCard(data[i], i));
+  }
+  mainSection.append(cardList);
+}
+
+function createCard(item, i) {
+  let card = document.createElement("div");
+  card.className = "card";
+  card.setAttribute("data-id", item.id);
+
+  let imgDiv = document.createElement("div");
+  imgDiv.className = "card__img";
+
+  let image = document.createElement("img");
+  image.src = item.image[0];
+  image.setAttribute("alt", "book");
+
+  imgDiv.append(image);
+
+  let cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+
+  let h4 = document.createElement("h4");
+  h4.className = "card_title";
+  h4.innerText = item.name;
+
+  let p1 = document.createElement("p");
+  p1.className = "card-author";
+  p1.innerText = item.location;
+
+  let p2 = document.createElement("p");
+  p2.className = "card-category";
+  p2.innerText = item.category;
+
+  let p3 = document.createElement("p");
+  p3.className = "card-price";
+  p3.innerText = item.price;
+
+  // let p4 = document.createElement("p");
+  // p4.className = "card__description";
+  // p4.innerText = item.description;
+
+  let a = document.createElement("a");
+  a.href = "#";
+  a.setAttribute("data-id", item.id);
+  a.className = "card__link";
+  a.innerText = "Edit";
+
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    populate(item);
+    populateOnlyPrice(item);
+  });
+
+  let btn = document.createElement("button");
+  btn.setAttribute("data-id", item.id);
+  btn.className = "card-button";
+  btn.innerText = "Delete";
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteBook(item);
+  });
+
+  cardBody.append(h4, p1, p2, p3, a, btn);
+  card.append(imgDiv, cardBody);
+
+  return card;
+}
+
+bookCreateBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addNewBooks();
+});
+
+function addNewBooks() {
+  fetch(bookURL, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
     },
-    body:JSON.stringify({
+    body: JSON.stringify({
       name: bookTitleInput.value,
-      location:"Ooty",
-      category:bookCategoryInput.value,
-      image:[bookImageInput.value],
-      price:bookPriceInput.value,
-      rating:"&#11088 &#11088 &#11088 &#11088 &#11088",
-      description:bookAuthorInput.value,
-      booked:"false" 
+      location: bookLocationInp.value,
+      category: bookCategoryInput.value,
+      image: [bookImageInput.value],
+      price: bookPriceInput.value,
+      rating: "&#11088 &#11088 &#11088 &#11088 &#11088",
+      description: bookAuthorInput.value,
+      booked: "false",
+    }),
+  })
+    .then((res) => {
+      return res.json();
     })
-  }).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    fetchData()
-  }).catch((error)=>{
-    console.log(error)
+    .then((data) => {
+      console.log(data);
+      fetchData();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+function deleteBook(item) {
+  fetch(`${bookURL}/${item.id}`, {
+    method: "DELETE",
   })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      fetchData();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
-function deleteBook(item){
-  fetch(`${bookURL}/${item.id}`,{
-    method:"DELETE"
-  }).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    fetchData()
-  }).catch((error)=>{
-    console.log(error)
-  })
+function populate(item) {
+  updateBookIdInput.value = item.id;
+  updateBookTitleInput.value = item.name;
+  updateBookImageInput.value = item.image;
+  updateBookAuthorInput.value = item.description;
+  updateBookCategoryInput.value = item.category;
+  updateBookPriceInput.value = item.price;
+  updateBookLocationInput.value = item.location;
 }
 
-function populate(item){
-  updateBookIdInput.value=item.id
-  updateBookTitleInput.value=item.name
-  updateBookImageInput.value=item.image
-  updateBookAuthorInput.value=item.description
-  updateBookCategoryInput.value=item.category
-  updateBookPriceInput.value=item.price
-}
+updateBookBtn.addEventListener("click", () => {
+  patchRequest();
+});
 
-
-updateBookBtn.addEventListener("click",()=>{
-  patchRequest()
-})
-
-function patchRequest(){
-  fetch(`${bookURL}/${updateBookIdInput.value}`,{
-    method:"PATCH",
-    headers:{
-      "Content-type":"application/json"
+function patchRequest() {
+  fetch(`${bookURL}/${updateBookIdInput.value}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
     },
-    body:JSON.stringify({
+    body: JSON.stringify({
       name: updateBookTitleInput.value,
-      location:"Ooty",
-      category:updateBookCategoryInput.value,
-      image:[updateBookImageInput.value],
-      price:Number(updateBookPriceInput.value),
-      rating:"&#11088 &#11088 &#11088 &#11088 &#11088",
-      description:updateBookAuthorInput.value,
-      booked:"false", 
-    })
-  }).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    fetchData()
-  }).catch((error)=>{
-    console.log(error)
+      location: updateBookLocationInput.value,
+      category: updateBookCategoryInput.value,
+      image: [updateBookImageInput.value],
+      price: Number(updateBookPriceInput.value),
+      rating: "&#11088 &#11088 &#11088 &#11088 &#11088",
+      description: updateBookAuthorInput.value,
+      booked: "false",
+    }),
   })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      fetchData();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
-function populateOnlyPrice(item){
-  updatePriceBookPrice.value=item.price
-  updatePriceBookId.value=item.id
-
+function populateOnlyPrice(item) {
+  updatePriceBookPrice.value = item.price;
+  updatePriceBookId.value = item.id;
 }
 
-updatePriceBookPriceButton.addEventListener("click",()=>{
-updateOnlyPrice()
-})
+updatePriceBookPriceButton.addEventListener("click", () => {
+  updateOnlyPrice();
+});
 
-function updateOnlyPrice(){
-  fetch(`${bookURL}/${updatePriceBookId.value}`,{
-    method:"PATCH",
-    headers:{
-      "Content-type":"application/json"
+function updateOnlyPrice() {
+  fetch(`${bookURL}/${updatePriceBookId.value}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
     },
-    body:JSON.stringify({
-      price:Number(updatePriceBookPrice.value)
+    body: JSON.stringify({
+      price: Number(updatePriceBookPrice.value),
+    }),
+  })
+    .then((res) => {
+      return res.json();
     })
-  }).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    fetchData()
-  }).catch((error)=>{
-    console.log(error)
-  })
+    .then((data) => {
+      console.log(data);
+      fetchData();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
-sortAtoZBtn.addEventListener("click",()=>{
-  sortAsc()
-})
+sortByPrice.addEventListener("change", () => {
+  updateValues(1);
+});
 
-function sortAsc(){
-  fetch(`${bookURL}?_sort=price&_order=asc`).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    getCardList(data)
-  }).catch((error)=>{
-    console.log(error)
-  })
+filterByCategory.addEventListener("change", () => {
+  updateValues(1);
+});
+
+filterByLocation.addEventListener("change", () => {
+  updateValues(1);
+});
+
+function updateValues(i) {
+  let filterByCategoryValue = filterByCategory.value;
+  let sortByPriceValue = sortByPrice.value;
+  let filterByLocationValue = filterByLocation.value;
+
+  filterData(filterByCategoryValue, sortByPriceValue, filterByLocationValue, i);
 }
 
-sortZtoABtn.addEventListener("click",()=>{
-  sortDesc()
-})
+function filterData(
+  filterByCategoryValue,
+  sortByPriceValue,
+  filterByLocationValue,
+  i
+) {
+  let arr = [...fetched_data];
 
-function sortDesc(){
-  fetch(`${bookURL}?_sort=price&_order=desc`).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    getCardList(data)
-  }).catch((error)=>{
-    console.log(error)
-  })
+  if (filterByCategoryValue != "") {
+    arr = arr.filter((ele) => {
+      return ele.category == filterByCategoryValue;
+    });
+  }
+
+  if (filterByLocationValue != "") {
+    arr = arr.filter((ele) => {
+      return ele.location == filterByLocationValue;
+    });
+  }
+  if (sortByPriceValue == "sort-low-to-high") {
+    arr.sort((a, b) => {
+      return a.price - b.price;
+    });
+  } else if (sortByPriceValue == "sort-high-to-low") {
+    arr.sort((a, b) => {
+      return b.price - a.price;
+    });
+  }
+
+  paginateData(i, arr);
 }
 
-filterClassic.addEventListener("click",()=>{
-  showClassic()
-})
+getUserDatabtn.addEventListener("click", () => {
+  fetchUsersData();
+});
 
-function showClassic(){
-  fetch(`${bookURL}?category=Classic`).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    //console.log(data)
-    getCardList(data)
-  }).then((error)=>{
-    console.log(error)
-  })
+let users_fetched_data=[]
+
+
+function fetchUsersData() {
+  fetch(userURL)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      users_fetched_data=[...data]
+
+      getTripsDatabtn.style.display = "inline";
+      getTripsDatabreak.style.display = "block";
+      getTripsDataheading.style.display = "block";
+      sortByBookings.style.display="block"
+      sortByBookingLineBreak.style.display="block"
+      sortByName.style.display="block"
+      sortByNameLineBreak.style.display="block"
+      filterByBooked.style.display="block"
+      filterByBookedLineBreak.style.display = "block";
+      getCardListforUsers(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
-filterFantasy.addEventListener("click",()=>{
-  showFantasy()
+getTripsDatabtn.addEventListener("click", () => {
+  getTripsDatabtn.style.display = "none";
+  getTripsDatabreak.style.display = "none";
+  getTripsDataheading.style.display = "none";
+  sortByBookings.style.display="none"
+      sortByBookingLineBreak.style.display="none"
+      sortByName.style.display="none"
+      sortByNameLineBreak.style.display="none"
+      filterByBooked.style.display="none"
+      filterByBookedLineBreak.style.display = "none";
+  fetchData();
+});
+
+sortByBookings.addEventListener("change",()=>{
+  updateValueUser()
+})
+sortByName.addEventListener("change",()=>{
+  updateValueUser()
 })
 
-function showFantasy(){
-  fetch(`${bookURL}?category=Fantasy`).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    //console.log(data)
-    getCardList(data)
-  }).then((error)=>{
-    console.log(error)
-  })
+filterByBooked.addEventListener("change",()=>{
+  updateValueUser()
+})
+
+function updateValueUser(){
+  let sortByBookingsValue=sortByBookings.value;
+  let sortByNameValue=sortByName.value;
+  let filterByBookedValue=filterByBooked.value
+
+  filterDataForUser(sortByBookingsValue,sortByNameValue,filterByBookedValue)
 }
 
-filterMystery.addEventListener("click",()=>{
-  showMystery()
-})
+function filterDataForUser(sortByBookingsValue,sortByNameValue,filterByBookedValue){
+  let arr = [...users_fetched_data];
 
-function showMystery(){
-  fetch(`${bookURL}?category=Mystery`).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    //console.log(data)
-    getCardList(data)
-  }).then((error)=>{
-    console.log(error)
-  })
+  
+
+  if (filterByBookedValue != "") {
+    arr = arr.filter((ele) => {
+      if(filterByBookedValue=="true"){
+        return ele.booked==true
+      }else if(filterByBookedValue=="false"){
+        return ele.booked=="false"
+      }
+    });
+  }
+
+  if (sortByNameValue == "sort-low-to-high") {
+    arr.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+
+  } else if (sortByNameValue == "sort-high-to-low") {
+    arr.sort((a, b) => {
+      if (a.name < b.name) {
+        return 1;
+      }
+      if (a.name > b.name) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  if (sortByBookingsValue == "sort-low-to-high") {
+    arr.sort((a, b) => {
+      return a.bookings.length - b.bookings.length;
+    });
+
+  } else if (sortByBookingsValue == "sort-high-to-low") {
+    arr.sort((a, b) => {
+      return b.bookings.length - a.bookings.length;
+    });
+  }
+  getCardListforUsers(arr)
 }
 
-searchByButton.addEventListener("click",()=>{
-  search()
-})
+function getCardListforUsers(data) {
+  mainSection.innerHTML = "";
+  let cardList = document.createElement("div");
+  cardList.className = "card-list";
 
-function search(){
-  if(searchBySelect.value=="title"){
-    searchByTitle()
-  }else if(searchBySelect.value=="author"){
-    searchByAuthor()
-  }else if(searchBySelect.value==""){
-    fetchData()
+  cardList.innerHTML = "";
+
+  for (let i = 0; i < data.length; i++) {
+    cardList.append(createCardforUser(data[i]));
+  }
+  mainSection.append(cardList);
+}
+
+function createCardforUser(item) {
+  let card = document.createElement("div");
+  card.className = "card";
+  card.setAttribute("data-id", item.id);
+
+  let imgDiv = document.createElement("div");
+  imgDiv.className = "card__img";
+
+  let image = document.createElement("img");
+  image.src = item.image;
+  image.setAttribute("alt", "book");
+
+  imgDiv.append(image);
+
+  let cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+
+  let h4 = document.createElement("h4");
+  h4.className = "card_title";
+  h4.innerText = item.name;
+
+  let p1 = document.createElement("p");
+  p1.className = "card-author";
+  p1.innerText = item.email;
+
+
+  let p3 = document.createElement("p");
+  p3.className = "card-price";
+
+  p3.innerText = `Trips Booked: ${item.bookings.length}`;
+
+  let ul = bookingsList(item);
+
+  let btn = document.createElement("button");
+  btn.setAttribute("data-id", item.id);
+  btn.className = "card-button";
+  btn.innerText = "Delete User";
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteUser(item);
+  });
+
+  cardBody.append(h4, p1, p3, ul, btn);
+  card.append(imgDiv, cardBody);
+
+  return card;
+}
+
+function bookingsList(item) {
+  let ul = document.createElement("ul");
+  for (let i = 0; i < item.bookings.length; i++) {
+    let li = document.createElement("li");
+    let btn = document.createElement("button");
+    btn.innerText = "Delete Booking";
+    li.innerText = item.bookings[i].name;
+    ul.append(li, btn);
+
+    btn.addEventListener("click", () => {
+      item.bookings.splice(i, 1);
+      deleteBooking(item.bookings, item);
+      if(item.bookings.length==0){
+        patchBookedValue(item.bookings,item)
+      }
+    });
+  }
+  return ul;
+}
+
+function deleteUser(item) {
+  fetch(`${userURL}/${item.id}`, {
+    method: "DELETE",
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      //call function here
+      fetchUsersData();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+function deleteBooking(arr, item) {
+  fetch(`${userURL}/${item.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      bookings: [...arr],
+    }),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      fetchUsersData();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+function patchBookedValue(arr, item) {
+  fetch(`${userURL}/${item.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      booked:false,
+    }),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+  
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+sortAtoZBtn.addEventListener("click", () => {});
+
+sortZtoABtn.addEventListener("click", () => {});
+
+searchByButton.addEventListener("click", () => {
+  search();
+});
+
+function search() {
+  if (searchBySelect.value == "title") {
+    searchByTitle();
+  } else if (searchBySelect.value == "author") {
+    searchByAuthor();
+  } else if (searchBySelect.value == "") {
+    fetchData();
   }
 }
 
-function searchByTitle(){
-  fetch(`${bookURL}?title=${searchByInput.value}`).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    getCardList(data)
-  }).catch((error)=>{
-    console.log(error)
-  })
+function searchByTitle() {
+  fetch(`${bookURL}?title=${searchByInput.value}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      getCardList(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
-function searchByAuthor(){
-  fetch(`${bookURL}?author=${searchByInput.value}`).then((res)=>{
-    return res.json()
-  }).then((data)=>{
-    console.log(data)
-    getCardList(data)
-  }).catch((error)=>{
-    console.log(error)
-  })
+function searchByAuthor() {
+  fetch(`${bookURL}?author=${searchByInput.value}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      getCardList(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }

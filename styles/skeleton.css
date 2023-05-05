@@ -158,9 +158,9 @@
   /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   a {
-    color: #1EAEDB; }
+    color: #e12a00; }
   a:hover {
-    color: #0FA0CE; }
+    color: #e12a00; }
   
   
   /* Buttons
@@ -205,9 +205,11 @@
   input[type="submit"].button-primary,
   input[type="reset"].button-primary,
   input[type="button"].button-primary {
-    color: #FFF;
-    background-color: #33C3F0;
-    border-color: #33C3F0; }
+    color:#FFF;
+    background-color: #df2b01;
+    border-color: black; 
+    border-radius: 30px;
+  }
   .button.button-primary:hover,
   button.button-primary:hover,
   input[type="submit"].button-primary:hover,
@@ -219,9 +221,10 @@
   input[type="reset"].button-primary:focus,
   input[type="button"].button-primary:focus {
     color: #FFF;
-    background-color: #1EAEDB;
-    border-color: #1EAEDB; }
-  
+    background-color: black;
+    border-color: black; 
+    
+  }
   
   /* Forms
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -267,7 +270,8 @@
   textarea:focus,
   select:focus {
     border: 1px solid #33C3F0;
-    outline: 0; }
+    outline: 0; 
+  }
   label,
   legend {
     display: block;
