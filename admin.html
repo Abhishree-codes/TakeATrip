@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/skeleton.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+          <div class="column">
+            <h1>Hotels Data</h1>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="columns four sidebar-one" id="sidebar-one">
+    
+            <h4>Add Hotel</h4>
+            <input type="text" id="book-title" class="u-full-width" placeholder="Name" />
+            <input type="text" id="book-image" class="u-full-width" placeholder="Image Url" />
+            <input type="text" id="book-category" class="u-full-width" placeholder="Category" />
+            <input type="text" id="book-author" class="u-full-width" placeholder="Description" />
+            <input type="number" id="book-price" class="u-full-width" placeholder="Price" />
+            <button id="add-book" class="u-full-width button button-primary">
+              Add Hotel
+            </button>
+            <hr />
+    
+            <h4>update all fields of Hotel</h4>
+            <input type="text" id="update-book-id" class="u-full-width" placeholder="ID" />
+            <input type="text" id="update-book-title" class="u-full-width" placeholder="Name" />
+            <input type="text" id="update-book-image" class="u-full-width" placeholder="Image Url" />
+            <input type="text" id="update-book-author" class="u-full-width" placeholder="Description" />
+            <input type="text" id="update-book-category" class="u-full-width" placeholder="Category" />
+            <input type="number" id="update-book-price" class="u-full-width" placeholder="Price" />
+            <button id="update-book" class="u-full-width button button-primary">
+              Update all fields
+            </button>
+            <hr />
+    
+            <h4>update only Price</h4>
+            <input type="text" id="update-price-book-id" class="u-full-width" placeholder="ID" />
+            <input type="number" id="update-price-book-price" class="u-full-width" placeholder="Price" />
+            <button id="update-price-book" class="u-full-width button button-primary">
+              Update Hotel Price
+            </button>
+            <hr />
+    
+            <h4>Sort Based On Price</h4>
+            <button id="sort-low-to-high" class="u-full-width button button-primary">
+              Sort Low To High
+            </button>
+            <button id="sort-high-to-low" class="u-full-width button button-primary">
+              Sort High To Low
+            </button>
+            <hr />
+    
+            <h4>Filter Based On Category </h4>
+            <button id="filter-Royals" class="u-full-width button button-primary">
+            Stay Like Royals
+            </button>
+            <button id="filter-Party" class="u-full-width button button-primary">
+                Party Destination
+            </button>
+            <button id="filter-Pilgrimages" class="u-full-width button button-primary">
+                Indian Pilgrimages
+            </button>
+            <button id="filter-Mountains" class="u-full-width button button-primary">
+                Mountains Calling
+            </button>
+            <button id="filter-Vacation" class="u-full-width button button-primary">
+                Beach Vacation
+            </button>
+           
+          </div>
+    
+          <div class="columns eight main">
+            <div class="search-book-wrapper" id="search-book-wrapper">
+              <select id="search-by-select" >
+                <option value="">Search By</option>
+                <option value="title">Name</option>
+                <option value="author">Location</option>
+              </select>
+              <input type="text"  id="search-by-input" placeholder="Enter Name/Location here" >
+              <button id="search-by-button" style="background-color: #33c3f0 ;color: white;border: none;">Search</button>
+    
+            </div>
+            <div class="data-list-wrapper" id="data-list-wrapper">
+              <!-- append card-list that includes card here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <script src="./scripts/admin.js" type="module"></script>
+    </body>
+</html>

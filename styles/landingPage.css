@@ -22,7 +22,6 @@
   .pattern {
     background-color: #dd6765;
     width: 90%;
-    /* height: 1500px; */
     margin-right: 50px;
     margin: auto;
     background-image: radial-gradient(#e6e2e2 1px, transparent 0),
@@ -32,13 +31,10 @@
     background-position: 0 0, 15px 15px, 30px 30px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-  
     gap: 20px;
     padding: 0px 20px 40px 30px;
-    
   }
-  
-  
+   
   .pattern .main-heading {
     grid-column-start: 1;
     grid-column-end: 6;
@@ -51,12 +47,13 @@
     color: #fff;
     font-weight: 900;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5), 4px 4px 0 rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
   }
   .pattern .main-heading p {
     font-family: "Sigmar", cursive;
   }
   .pattern p:nth-child(1) {
-    margin-bottom: -45px;
+    margin-bottom: -25px;
   }
   .pattern .text {
     grid-column-start: 2;
@@ -315,6 +312,7 @@
     background-color: black;
     color: #fff;
     border-radius: 20px;
+    border: 1px solid transparent;
   }
   /******TRAVELLER SECTION STYLING*********/
   .traveller-cont {
@@ -410,6 +408,7 @@
     padding-right: 20px;
     text-align: right;
     color: #fff;
+
   }
   .traveller-buttons > div:nth-child(1) button {
     background-color: #e12a00;
@@ -438,20 +437,21 @@
     margin-top: -150px;
   }
   .banner > .container {
-    height: 550px;
+    height: 650px;
     width: 90%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-gap: 0px;
     background-color: #e78f81;
     /* position: absolute; */
-    /* overflow: hidden; */
+    overflow: hidden;
+    
   }
   .banner > .container > div {
     border: 1px solid #fecac2;
     height: 100px;
+    width: 100px;
   }
   .banner > .container > div:nth-child(53) {
     border-bottom: 1px solid #e78f81;
@@ -492,6 +492,13 @@
   .banner > .container > div:nth-child(65) {
     border-bottom: 1px solid #e78f81;
   }
+  nav{
+   
+    margin: auto;
+    position: absolute;
+    margin-top: -620px;
+    border: 1px solid black
+  }
   .banner-text {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -501,11 +508,14 @@
     height: 500px;
     position: absolute;
     /* border: 1px solid black; */
-    left: 55%;
+    left: 56%;
     transform: translate(-50%, 0);
     z-index: 2;
   }
-  
+  .banner-text .img:hover{
+    cursor: pointer;
+  }
+
   .banner-text > .heading {
     grid-column-start: 2;
     grid-column-end: 5;
@@ -552,8 +562,8 @@
   }
   
   .band-aid-top-left {
-    width: 100px;
-    height: 200px;
+    width: 85px;
+    height: 150px;
     position: relative;
     transform: rotate(45deg);
     overflow: hidden;
@@ -584,11 +594,12 @@
     object-fit: cover;
     border-radius: 50%;
     /* transform: skew(45deg) translate(-50%, -50%); */
+    border: 1px solid white;
   }
   
   .band-aid-top-right {
-    width: 100px;
-    height: 200px;
+    width: 85px;
+    height: 150px;
     background-color: #ffffff;
     /* border: 1px solid #000000; */
   
@@ -620,11 +631,12 @@
     object-fit: cover;
     border-radius: 50%;
     /* transform: skew(45deg) translate(-50%, -50%); */
+    border: 1px solid white;
   }
   
   .band-aid-bottom-left {
-    width: 100px;
-    height: 200px;
+    width: 85px;
+    height: 150px;
     background-color: #ffffff;
     /* border: 1px solid #000000; */
   
@@ -656,11 +668,12 @@
     object-fit: cover;
     border-radius: 50%;
     /* transform: skew(45deg) translate(-50%, -50%); */
+    border: 1px solid white;
   }
   
   .band-aid-bottom-right {
-    width: 100px;
-    height: 200px;
+    width: 85px;
+    height: 150px;
     background-color: #ffffff;
     /* border: 1px solid #000000; */
   
@@ -692,6 +705,7 @@
     object-fit: cover;
     border-radius: 50%;
     /* transform: skew(45deg) translate(-50%, -50%); */
+    border: 1px solid white;
   }
   
   .container {
@@ -800,9 +814,3 @@
     z-index: -1;
   } */
 
-  @media screen and (max-width: 1042px) {
-    .banner-text .heading{
-      font-size: 80px;
-    }
-  }
-  
