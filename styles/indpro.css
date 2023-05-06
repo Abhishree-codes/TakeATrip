@@ -1,0 +1,20 @@
+
+.image {
+  width: 50%;
+}
+.image img{
+  width: 100%;
+}
+
+.images{
+  margin-top: 30px;
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+
+
+.images img{
+  width: 100%;
+}
