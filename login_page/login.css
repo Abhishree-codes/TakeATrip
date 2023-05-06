@@ -11,7 +11,7 @@ body{
     display: flex;
     width: 90%;
     margin: auto;
-    background-color: #ea9d4e;
+    background-color: #f36061;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -38,12 +38,21 @@ body{
     width: 70%;
     background-image:url(img/loginPageBackGroundTexture.jpg);
     border-radius: 10px;
-    height: 550px;
+    height: 600px;
+    
     
 }
 
+#admin{
+    text-align: end;
+    color: red;
+    margin: 20px;
+   
+}
+
+
 #detail>div{
-    width: 50%;
+    width: 400px;
     margin: auto;
     margin-bottom: 30px;
     
@@ -90,6 +99,8 @@ body{
     margin: auto;
     border-radius: 5px;
 }
+
+
 /* new */
 * {
     margin: 0;
@@ -99,7 +110,7 @@ body{
 }
 
 body {
-    background: #f4c084;
+    background: #e89186;
 }
 
 .logo,
@@ -114,7 +125,7 @@ p {
     margin-top:2rem !important;
     padding: 40px;
     border-radius: 20px;
-    border: 8px solid #ea9d4e;
+    border: 8px solid #f36061;
     box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
         5px 5px 15px rgba(0, 0, 0, 0.35),
         inset -5px -5px 15px rgba(255, 255, 255, 0.1),
@@ -130,6 +141,26 @@ p {
 @media only screen and (max-width: 500px) {
     .container {
         width: 100%;
+    }
+}
+@media only screen and (max-width:800px){
+    #main{
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        margin: auto;
+        background-color: #f36061;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    #imgDiv{
+        width: 50%;
+        margin: auto;
+        margin-top: 30px;
+        
+    }
+    #detail{
+        margin: auto;
+        margin-top: 30px;
     }
 }
 
@@ -164,7 +195,7 @@ p {
 .container .form .inputBox input {
     padding: 12px 10px 12px 48px;
     width: 100%;
-    background: #ea9d4e;
+    background: #f36061;
     border: 1px solid red;
     color: #fff;
     font-weight: 300;
@@ -191,7 +222,7 @@ p {
 .container .form .inputBox input:focus~span {
     color: white;
     border: 1px solid red;
-    background: #ea9d4e;
+    background: #f36061;
     color: white;
     transform: translateX(25px) translateY(-7px);
     font-size: 0.6em;
@@ -206,7 +237,7 @@ p {
 }
 
 .container .form .inputBox input[type="submit"] {
-    background: #ea9d4e;
+    background: #f36061;
     color: white;
     padding: 10px 0;
     font-weight: 500;
@@ -225,7 +256,7 @@ p {
 
 .container .form p a {
     font-weight: 500;
-    color: palevioletred;
+    color: #f36061;
     text-decoration: none;
 }
 
@@ -239,7 +270,7 @@ p {
     height: 150px;
     border-radius: 50%;
     border: 8px solid white;
-    border-top-color: palevioletred;
+    border-top-color: #f36061;
     animation: spin 1s ease-in-out infinite;
 }
 
