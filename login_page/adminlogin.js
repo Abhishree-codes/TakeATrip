@@ -117,6 +117,7 @@ async function PostData(username,emailId,pwd){
             singinText.style.color = "yellow";
         }        
          else if (checkDetails(userData)) {
+            localStorage.setItem("logged_in",JSON.stringify(newEmail.value));
             singinText.innerText = "Login Successful";
             singinText.style.color = "greenyellow";
 
@@ -136,7 +137,7 @@ async function PostData(username,emailId,pwd){
 
     function checkDetails(data) {
         for (let i = 0; i < data.length; ++i) {
-            if (data[i].email === newEmail.value && data[i].password === newPass.value) {
+            if (data[i].email === newEmail.value && data[i].password == newPass.value) {
                 return true;
             }
         }
