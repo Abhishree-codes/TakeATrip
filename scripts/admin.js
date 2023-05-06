@@ -108,6 +108,7 @@ function renderData(currentPage, arr) {
 
 function createButton(i) {
   let btn = document.createElement("button");
+  btn.className="pag-btn"
   btn.innerText = i;
 
   btn.addEventListener("click", () => {
@@ -141,10 +142,12 @@ function createCard(item, i) {
 
   let imgDiv = document.createElement("div");
   imgDiv.className = "card__img";
-
+  
   let image = document.createElement("img");
   image.src = item.image[0];
   image.setAttribute("alt", "book");
+
+  // image.setAttribute("width","200px")
 
   imgDiv.append(image);
 
@@ -167,9 +170,7 @@ function createCard(item, i) {
   p3.className = "card-price";
   p3.innerText = item.price;
 
-  // let p4 = document.createElement("p");
-  // p4.className = "card__description";
-  // p4.innerText = item.description;
+  
 
   let a = document.createElement("a");
   a.href = "#";

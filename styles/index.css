@@ -6,7 +6,9 @@
 /* body{
   background-color: #f15f5c;
 }  */
-
+button:hover{
+  cursor: pointer;
+}
 #log-div {
   text-align: center;
   display: flex;
@@ -71,6 +73,24 @@ footer .container1 {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 20px;
 }
+
+/* sec buttons */
+
+#sec-btns{
+  display: grid;
+  flex-direction: column;
+  
+}
+#b3{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 50px;
+  width: 120px;
+  height: 40px;
+  background-color: black;
+  border: 1px solid black;
+}
 footer .container1 .sec h2 {
   position: relative;
   color: #333;
@@ -108,6 +128,7 @@ footer .container1 .links ul li a {
   font-size: 24px;
   color: rgb(59, 55, 55);
   cursor: pointer;
+  
 }
 nav{
   display: flex;
@@ -133,6 +154,7 @@ nav>div:nth-child(2){
   border-radius: 50%;
   border: 2px solid;
   text-align: center;
+ 
 }
 
 nav ul {
@@ -149,28 +171,34 @@ a {
   font-weight:900;
 }
 
-.burgerMenu {
-  display: none;
-}
+
 
 .menu-btn:hover {
   background-color: black;
   color: beige;
-
+  transition: 1s;
+ 
 }
 
 .burgerMenu {
-  display: none;
+  overflow: hidden;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   background-color: black;
   position: absolute;
-  top: 3rem;
-  right: 9rem;
-  border-radius: 40px;
   
+  border-radius: 40px; 
+  min-width: 200px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+  transition: height 1s ease-in;
+  z-index: 10;
+  height: 0;
+  text-align: left;
+
 }
+  
+
 
 .burgerMenu a {
   display: block;
@@ -179,10 +207,75 @@ a {
   text-decoration: none;
   border-radius: 40px;
 }
+
 .burgerMenu a:hover {
   background-color: #ddd;
   color: black;
 }
+
+.menu-btn:hover+ .burgerMenu{
+  height: 500px ;
+  
+}
+.burgerMenu:hover{
+  height: 500px ;
+}
+.burgerMenu> a{
+  margin: 20px;
+}
+
+
+/* testing */
+/* 
+.menu-btn {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 40px;
+  position: relative;} /* Add this line */
+
+/* 
+.burgerMenu {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  right: 0; 
+  background-color: black;
+  border-radius: 40px;
+  width: 150px; 
+  z-index: 999;
+  top: 3rem;
+  right: 9rem;
+  padding: 10px;
+}
+
+.menu-btn:hover + .burgerMenu {
+  display: block;
+} */
+/* 
+.burgerMenu a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+} */
+
+.burgerMenu a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.cross {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
 
 .cross {
   position: absolute;

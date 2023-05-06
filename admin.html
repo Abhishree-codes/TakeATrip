@@ -21,17 +21,24 @@
       <a href="#">REVIEW</a>
   </div>
   
-  <div id="myLinks">
-      
-      <button class="menu-btn">&#9776;</button>
-      <div class="burgerMenu">
-          <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-      <p class="cross">&#9587</p>
+  <div id="myLinks" class="dropdown">
+      <div class="dropdown1">
+      <button class="menu-btn dropbtn">&#9776;</button>
+      <div class="burgerMenu dropdown-content">
+          <a href="#news">Popular Trips</a>
+      <a href="#contact">Budget-Friendly</a>
+      <a href="#about">Shimla</a>
+      <a href="">Ooty</a>
+      <a href="">Maldives</a>
+      <a href="">Varanasi</a>
+      <a href="">Amritsar</a>
+      <a href="">Goa</a>
+      <a href="">Amsterdam</a>
+      <a href="">Udaipur</a>
+      <a href="">Dubai</a>
       </div>
-        </a>
     </div>
+  </div>
 </nav>
     <div class="container">
       <div class="row">
@@ -56,11 +63,14 @@
             Get Trip Data
           </button>
           <hr id="fetch-trips-break" style="display: none" />
+
+            
           <select id="sort-by-bookings" style="display: none">
             <option value="">Sort By No. of Bookings</option>
             <option value="sort-low-to-high">Sort Low To High</option>
             <option value="sort-high-to-low">Sort High To Low</option>
           </select>
+         
           <hr id="sort-by-bookings-break" style="display: none" />
           <select id="sort-by-name" style="display: none">
             <option value="">Sort Alphabetically</option>

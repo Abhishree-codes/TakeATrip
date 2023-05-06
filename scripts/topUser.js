@@ -75,7 +75,7 @@ function createTripCard(ele){
     let price=document.createElement("h3")
     price.innerText=ele.price
 
-    let desc=document.createElement("desc")
+    let desc=document.createElement("p")
     desc.innerText=ele.description
 
 
@@ -88,7 +88,7 @@ function createTripCard(ele){
 
     tripCardImgDiv.append(image)
 
-    tripCard.append(tripCardDetails,tripCardImgDiv)
+    tripCard.append(tripCardImgDiv,tripCardDetails)
     return tripCard
 }
 

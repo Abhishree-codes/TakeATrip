@@ -12,8 +12,16 @@
 <body>
     
     <div class="cont">
-        <!-- navbar -->
-   
+        <!-- pop up -->
+    <div class="popup">
+        <div class="popup-content">
+          <p></p>
+          <button class="close-btn">Close</button>
+        </div>
+      </div>
+      <!-- pop up -->
+      
+
         <div class="corner-pattern"></div>
         
         <div class="banner">
@@ -92,6 +100,7 @@
               <div></div>
             </div>
           </div>
+               <!-- navbar -->
           <nav>
             <div>
             <h2>TakeATrip</h2>
@@ -103,17 +112,24 @@
             <a href="#">REVIEW</a>
         </div>
         
-        <div id="myLinks">
-            
-            <button class="menu-btn">&#9776;</button>
-            <div class="burgerMenu">
-                <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <p class="cross">&#9587</p>
+        <div id="myLinks" class="dropdown">
+            <div class="dropdown1">
+            <button class="menu-btn dropbtn">&#9776;</button>
+            <div class="burgerMenu dropdown-content">
+                <a href="#news">Popular Trips</a>
+            <a href="#contact">Budget-Friendly</a>
+            <a href="#about">Shimla</a>
+            <a href="">Ooty</a>
+            <a href="">Maldives</a>
+            <a href="">Varanasi</a>
+            <a href="">Amritsar</a>
+            <a href="">Goa</a>
+            <a href="">Amsterdam</a>
+            <a href="">Udaipur</a>
+            <a href="">Dubai</a>
             </div>
-              </a>
           </div>
+        </div>
      </nav>
             
           <div class="banner-text">
@@ -127,7 +143,7 @@
                 <!-- <img src="https://media.istockphoto.com/id/1270067126/photo/smiling-indian-man-looking-at-camera.jpg?s=170667a&w=0&k=20&c=XwgSl6ktDnX13WbmqSR_vYMllIMLqUX0ak6mn5sGuPI=" alt="Image"> -->
             </div>
             </div>
-            <div class="heading">
+            <div class="heading show-on-scroll">
               Dream Trip Moment
             </div>
             <div class="band-aid-bottom-left">
@@ -163,19 +179,19 @@
           </div>
         <div class="traveller-cont">
             <div class="traveller">
-                <h3>Our Top Travellers</h3>
+                <h3 class="trav show-on-scroll">Our Top Travellers</h3>
                 <div class="user-image one">
-                    <div id="egg">
+                    <div id="egg" class="eggs">
                         <img src="https://i.pinimg.com/564x/4b/20/90/4b2090a64418fe5bd727f9250083d090.jpg">
                     </div>
                 </div>
                 <div class="user-image two">
-                    <div id="egg">
+                    <div id="egg" class="eggs">
                         <img src="https://i.pinimg.com/564x/e2/d7/ac/e2d7ac0ad4aeac89c59baa798967b040.jpg"> 
                     </div>
                 </div>
                 <div class="user-image three">
-                   <div id="egg">
+                   <div id="egg" class="eggs">
                     <img src="https://i.pinimg.com/564x/fc/e9/5f/fce95f8429060c23c94680d1ee86d03d.jpg">
                    </div> 
                 </div>
@@ -203,54 +219,54 @@
         </div>
     <div class="pattern">
    <div class="main-heading">
-    <p>Explore the Beauty Of</p> 
-    <p>The World</p>
+    <p class="show-on-scroll">Explore the Beauty Of</p> 
+    <p class="show-on-scroll">The World</p>
    </div>
-    <div class="card">
+    <div class="card inline-photo show-on-scroll">
         <div class="card-title">
             <h3>Maldives</h3>
         </div>
-        <div class="card-img">
+        <div class="card-img inline-photo show-on-scroll">
             <img src="https://i.pinimg.com/564x/5d/60/8c/5d608c436925c820d51ff98c6ffecba8.jpg">
         </div>
     </div>
     <div class="arrow">
         <img src="images/arrow.png">
     </div>
-    <div class="card">
+    <div class="card inline-photo show-on-scroll">
         <div class="card-title">
             <h3>Shimla</h3>
         </div>
-        <div class="card-img">
+        <div class="card-img inline-photo show-on-scroll">
             <img src="https://i0.wp.com/www.titanui.com/wp-content/uploads/2013/06/19/Forests-and-Snow-Capped-Mountains-Illustration-Vector-03.jpg">
         </div>
     </div>
     <div class="arrow">
         <img src="images/arrow.png">
     </div>
-    <div class="card">
+    <div class="card inline-photo show-on-scroll">
         <div class="card-title">
             <h3>Varanasi</h3>
         </div>
-        <div class="card-img">
+        <div class="card-img  inline-photo show-on-scroll">
             <img src="https://t4.ftcdn.net/jpg/03/19/28/09/360_F_319280937_kGsgJCGfaNpNxNLrEOJbq6EQ31SrfnXG.jpg">
         </div>
     </div>
     <div class="arrow six">
         <img src="images/arrow.png">
     </div>
-    <div class="text">
-        <h3>Croodles</h3>
-        <h3>Travel Location</h3>
+    <div class="text show-on-scroll">
+        <h3 class="croodles ">Croodles</h3>
+        <h3 class-="croodles-location">Travel Location</h3>
     </div>
     <div class="arrow eight">
         <img src="images/arrow.png">
     </div>
-    <div class="card">
+    <div class="card inline-photo show-on-scroll">
         <div class="card-title">
             <h3>Ooty</h3>
         </div>
-        <div class="card-img">
+        <div class="card-img inline-photo show-on-scroll">
             <img src="https://cdn.dribbble.com/userupload/3567202/file/original-e4597fc5b84118cb45687e16b14987ec.jpg?resize=400x0">
         </div>
     </div>
@@ -261,14 +277,14 @@
             <div class="input-image">
                 <img src="https://i.pinimg.com/564x/a5/34/ca/a534ca684ad524d4387dbc796bff3a05.jpg">
             </div>
-        <input type="text" placeholder="Find Location">
+        <input type="text" id="location-inp" placeholder="Find Location">
     </div>
     </div>
-    <div class="card">
+    <div class="card inline-photo show-on-scroll">
         <div class="card-title">
             <h3>Amritsar</h3>
         </div>
-        <div class="card-img">
+        <div class="card-img inline-photo show-on-scroll">
             <img src="https://media.istockphoto.com/id/545566464/vector/the-golden-temple.jpg?s=612x612&w=0&k=20&c=C6IIpK6mGBPDU-7HglHYqlNJBqY0veovjaPoQ0kGW3E=">
         </div>
     </div>
@@ -290,21 +306,25 @@
         <div class="input-image">
             <img src="https://i.pinimg.com/564x/a5/34/ca/a534ca684ad524d4387dbc796bff3a05.jpg">
         </div>
-        <input type="text" placeholder="Email">
-        <button>Subscribe</button>
+        <input id="sub-email" type="text" placeholder="Email">
+        <button id="sub" class="btn">
+            Subscribe</button>
 </div>
 </div>
 <!-- footer part -->
 <footer>
     <div class="container1">
-        <div class="sec">
+        <div class="sec" id="sec-btns">
             <h2>TakeATrip</h2>
     <p>Subscribe to our newsletter to get more informations</p>
     <div id="log-div">
         <button id="b1">LOGIN</button>
         <button id="b2">SIGN UP</button>
     </div>
-        </div>
+    <div>
+        <button id="b3">ADMIN</button>
+            </div>
+    </div>
         <div class="sec links">
             <h2 class="h2tag">Navigation</h2>
             <ul>
