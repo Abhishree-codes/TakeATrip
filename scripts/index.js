@@ -1,3 +1,4 @@
+
 const baseServerURL = "https://api-by-nikhil.onrender.com/";
 const usersURL = "https://api-by-nikhil.onrender.com/users";
 
@@ -187,4 +188,29 @@ closeBtn.addEventListener('click', hidePopup);
 // example usage
 
 
+
+//cross deleted so code not needed??
+// ---band aid 
+// ---dream  trip 
+// ---top trvaeller
+// ---explore the beauty 
+// ---find location
+var menuBtn = document.querySelector('.menu-btn');
+var navbar = document.querySelector('.burgerMenu');
+var cross = document.querySelector('.cross');
+function myburger(){
+    navbar.style.display="flex"
+}
+menuBtn.addEventListener('click', myburger);
+
+cross.addEventListener('click', function(){
+    navbar.style.display="none"
+})
+
+let discover=document.getElementById("discover")
+
+discover.addEventListener("click",function(){
+
+    window.location.href="product.html"
+})
 
