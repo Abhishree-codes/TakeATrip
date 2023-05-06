@@ -35,25 +35,29 @@ async function getData(){
 }
 getData();
 
-async function PostData(username,emailId,pwd){
-  let res=await fetch(api,{
-      method:"POST",
-      body:JSON.stringify({
-         name:username,
-         email:emailId,
-         password:pwd
-      }),
-      headers:{
-      "Content-type":"application/json"
-      }
+// async function PostData(username,emailId,pwd,img,bookings,booked){
+//   let res=await fetch(api,{
+//       method:"POST",
+//       body:JSON.stringify({
+//          name:username,
+//          email:emailId,
+//          password:pwd,
+//          img:"https://as1.ftcdn.net/v2/jpg/05/16/27/58/1000_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg",
+//          bookings:[],
+//          booked:false
 
-  });
+//       }),
+//       headers:{
+//       "Content-type":"application/json"
+//       }
 
-  let data=await res.json();
-  console.log(data);
-  console.log(res)
-  getData();
-}
+//   });
+
+//   let data=await res.json();
+//   console.log(data);
+//   console.log(res)
+//   getData();
+// }
 
     login.onclick = () => {
         container.classList.add("signinForm");
@@ -81,21 +85,27 @@ async function PostData(username,emailId,pwd){
             singupText.innerText = "Account already exist";
             singupText.style.color = "#00dfc4";
             singupText.style.fontSize = "17px";
-
+            
         } else {
-            // const data = {
-            //     name: username.value,
-            //     email: email.value,
-            //     password: password.value
-            // };
+            const data = {
+                name: username.value,
+                email: email.value,
+                password: password.value
+            };
+            
+            localStorage.setItem("user", JSON.stringify(data));
+
+            let otp=generateOTP(4);
+             localStorage.setItem("otp",otp);
+             location.href="/otp.html";
+            
             //call api
-            let res = PostData(username.value,email.value,password.value);
-            res.then((res)=>{
-              singupText.innerText = "Account Created";
-              singupText.style.color = "greenyellow";
-            })
+            // let res = PostData(username.value,email.value,password.value);
+            // res.then((res)=>{
+            //   singupText.innerText = "Account Created";
+            //   singupText.style.color = "greenyellow";
+            // })
             // userData.push(data);
-            // localStorage.setItem("user", JSON.stringify(userData));
           
         }
     });
@@ -119,9 +129,10 @@ async function PostData(username,emailId,pwd){
             singinText.style.color = "yellow";
         }        
          else if (checkDetails(userData)) {
+            localStorage.setItem("logged_in",JSON.stringify(newEmail.value));
             singinText.innerText = "Login Successful";
             singinText.style.color = "greenyellow";
-
+            location.href="/index.html";
             // spin.style.display = "none";
             // spinner.style.display = "block";
             // setTimeout(() => {
@@ -160,12 +171,19 @@ async function PostData(username,emailId,pwd){
 //     }else{
 //         alert ("user name or password is incorrect")
 //     }
-        
-    
-    
-  
-
 // })
+
+function generateOTP(limit) {
+          
+    // Declare a digits variable 
+    // which stores all digits
+    var digits = '0123456789';
+    let OTP = '';
+    for (let i = 0; i < limit; i++ ) {
+        OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+}
 
 
 
