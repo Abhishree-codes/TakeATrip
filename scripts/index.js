@@ -14,3 +14,10 @@ menuBtn.addEventListener('click', myburger);
 cross.addEventListener('click', function(){
     navbar.style.display="none"
 })
+
+let discover=document.getElementById("discover")
+
+discover.addEventListener("click",function(){
+
+    window.location.href="product.html"
+})
