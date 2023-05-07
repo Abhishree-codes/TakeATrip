@@ -12,7 +12,7 @@
   <body>
     <nav>
       <div>
-      <h2>TakeATrip</h2>
+      <h2 onclick="window.location.href='index.html';">TakeATrip</h2>
   </div>
   <div>
       <a href="#"><span class="circle">DISCOVER</span></a>
@@ -40,6 +40,7 @@
     </div>
   </div>
 </nav>
+<div id="loader"></div>
     <div class="container">
       <div class="row">
         <div class="column">
@@ -252,20 +253,17 @@
         </div>
         <div class="columns eight main">
           <div class="search-book-wrapper" id="search-book-wrapper">
-            <select id="search-by-select">
-              <option value="">Search By</option>
-              <option value="title">Name</option>
-              <option value="author">Location</option>
-            </select>
             <input
               type="text"
               id="search-by-input"
-              placeholder="Enter Name/Location here"
+              placeholder="Enter Trip Name here"
             />
             <button
               id="search-by-button"
-              style="background-color: #33c3f0; color: white; border: none"
-            >
+            style="margin-right: 10px;
+            background-color: #e12a00;
+            border:1px solid black;
+            color: #fff; border-radius: 50px;">
               Search
             </button>
           </div>

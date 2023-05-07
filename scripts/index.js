@@ -19,23 +19,138 @@ let subInp = document.getElementById("sub-email");
 //REDIRECT TO LOGIN
 let loginBtn = document.getElementById("b1");
 let registerBtn = document.getElementById("b2");
+let logOutBtn=document.getElementById("c1")
+
+let cartDropDown=document.getElementById("cart")
+let accountDropDown=document.getElementById("account")
+
+
+
 
 let adminBtn = document.getElementById("b3");
 
 const popup = document.querySelector('.popup');
 const closeBtn = document.querySelector('.close-btn');
 
-loginBtn.addEventListener("click",function(){
-  location.href="/login_page/login.html";
+
+
+let user_name;
+
+
+
+window.addEventListener("load",()=>{
+  user_name=localStorage.getItem("logged_in")
+
+
+  toggle()
 })
 
-registerBtn.addEventListener("click",function(){
-  location.href="/login_page/login.html";
+
+function toggle(){
+if(user_name){
+  loginBtn.style.display="none"
+  registerBtn.style.display="none"
+  logOutBtn.style.display="block"
+
+  cartDropDown.style.display="block"
+  accountDropDown.style.display="block"
+}else{
+  loginBtn.style.display="block"
+  registerBtn.style.display="block"
+  logOutBtn.style.display="none"
+
+  cartDropDown.style.display="none"
+  accountDropDown.style.display="none"
+}
+
+cartDropDown.addEventListener("click",()=>{
+  window.location.href="cart.html"
 })
 
-adminBtn.addEventListener("click",function(){
-  location.href="/login_page/adminlogin.html";
+logOutBtn.addEventListener("click",()=>{
+  user_name=""
+  localStorage.setItem("logged_in",user_name)
+  location.reload()
 })
+}
+
+loginBtn.addEventListener("click",()=>{
+  window.location.href="login_page/login.html"
+})
+registerBtn.addEventListener("click",()=>{
+  window.location.href="login_page/login.html"
+})
+adminBtn.addEventListener("click",()=>{
+  window.location.href="login_page/adminlogin.html"
+})
+
+// if username is not null
+//remove login/sign up add logout-- done
+//my cart, my account, logout===done
+//if he clicks cart redirect to cart ---done
+
+//if logout refresh page with local storage key as null---done
+//display login sign up ---done
+
+
+//now if hes not logged in youll
+//all hrefs need to store a filter key and then redirect to product=== done
+//product will check for filter key (and logged in key for adding to cart)---done
+//if location click then redirect to product page with filter key set to location ---done
+
+//FOR PRODUCT PAGE 
+
+locationInp.addEventListener("click", () => {
+  console.log(locationInp.value)
+  localStorage.setItem("location", locationInp.value);
+//value keeps coming null?
+  //use this to display on product page
+});
+
+let Ooty=document.getElementById("Ooty")
+let Shimla=document.getElementById("Shimla")
+let Maldives=document.getElementById("Maldives")
+let Varanasi=document.getElementById("Varanasi")
+let Amritsar=document.getElementById("Amritsar")
+let Goa=document.getElementById("Goa")
+let Amsterdam=document.getElementById("Amsterdam")
+let Dubai=document.getElementById("Dubai")
+
+let locationsDropDownArray=[Ooty,Shimla,Maldives,
+Varanasi,Amritsar,Goa,Amsterdam,Dubai]
+
+locationsDropDownArray.forEach((ele)=>{
+  ele.addEventListener("click",(e)=>{
+    e.preventDefault()
+    storeLocationKey(ele)
+
+  })
+})
+
+function storeLocationKey(ele){
+  let str=""
+  if(ele.id[ele.id.length-1]==1){
+    str=ele.id.slice(0,-1)
+  }else{
+    str=ele.id
+  }
+  localStorage.setItem("location",str)
+  //redirect here
+  window.location.href="product.html" 
+}
+
+
+//REDIRECTING FOR THE IMAGES
+
+let imgDivLocationsArray=document.querySelectorAll(".card")
+
+imgDivLocationsArray.forEach((ele)=>{
+  ele.addEventListener("click",()=>{
+
+    
+    storeLocationKey(ele)
+  })
+
 
 subBtn.addEventListener("click", () => {
   showPopup()
@@ -51,11 +166,8 @@ function ValidateEmail() {
   
   return false;
 }
-locationInp.addEventListener("click", () => {
-  localStorage.setItem("location", locationInp.value);
 
-  //use this to display on product page
-});
+
 
 window.addEventListener("load", () => {
   fetchUserData();
@@ -215,9 +327,9 @@ function myburger(){
 }
 menuBtn.addEventListener('click', myburger);
 
-cross.addEventListener('click', function(){
-    navbar.style.display="none"
-})
+// cross.addEventListener('click', function(){
+//     navbar.style.display="none"
+// })
 
 let discover=document.getElementById("discover")
 
