@@ -72,12 +72,17 @@ button:hover{
     grid-template-columns: 1fr 1fr 1fr 1fr;
    color: beige;
     width: 70%;
+    gap: 20px;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
     justify-content: center;
     align-items: center;
 
+}
+.des{
+    display: flex;
+    flex-direction: column;
 }
 .logo1 img{
     position: relative;
