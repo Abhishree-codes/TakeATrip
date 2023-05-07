@@ -36,7 +36,7 @@ let filterByCategory = document.getElementById("filter-by-category");
 let filterByLocation = document.getElementById("filter-by-location");
 //Search by title/author
 
-let searchBySelect = document.getElementById("search-by-select");
+
 let searchByInput = document.getElementById("search-by-input");
 let searchByButton = document.getElementById("search-by-button");
 
@@ -65,30 +65,50 @@ let sortByNameLineBreak=document.getElementById("sort-by-name-break")
 let filterByBooked=document.getElementById("filter-by-booked")
 let filterByBookedLineBreak=document.getElementById("filter-by-booked-break")
 
-
+let loader=document.getElementById("loader")
 
 
 window.addEventListener("load", () => {
+  loader.className="loader"
   fetchData();
 });
 
+
+
 let fetched_data = [];
 let currentPage = 1;
+let flag;
+
 function fetchData() {
   fetch(bookURL)
     .then((res) => {
+      if(res.ok){
+        flag=true
+      }else{
+        flag=false
+      }
       return res.json();
     })
     .then((data) => {
       console.log(data);
       fetched_data = [...data];
-
       //getCardList(data);
-      renderData(1, fetched_data);
+      displayLoader()
     })
     .catch((error) => {
       console.log(error);
     });
+}
+
+function displayLoader(){
+  setTimeout(()=>{
+    loader.classList.remove("loader")
+
+    if(flag==true){
+      renderData(1, fetched_data);
+    }
+    ;
+},2000)
 }
 
 function renderData(currentPage, arr) {
@@ -324,6 +344,13 @@ function updateOnlyPrice() {
     });
 }
 
+searchByButton.addEventListener("click", () => {
+  if(searchByButton.classList.contains("user-search")){
+    updateValueUser()
+  }else{
+  updateValues(1)
+  }
+});
 sortByPrice.addEventListener("change", () => {
   updateValues(1);
 });
@@ -340,14 +367,14 @@ function updateValues(i) {
   let filterByCategoryValue = filterByCategory.value;
   let sortByPriceValue = sortByPrice.value;
   let filterByLocationValue = filterByLocation.value;
-
-  filterData(filterByCategoryValue, sortByPriceValue, filterByLocationValue, i);
+  let searchByInputValue=searchByInput.value
+  filterData(filterByCategoryValue, sortByPriceValue, filterByLocationValue,searchByInputValue, i);
 }
 
 function filterData(
   filterByCategoryValue,
   sortByPriceValue,
-  filterByLocationValue,
+  filterByLocationValue,searchByInputValue,
   i
 ) {
   let arr = [...fetched_data];
@@ -356,6 +383,11 @@ function filterData(
     arr = arr.filter((ele) => {
       return ele.category == filterByCategoryValue;
     });
+  }
+  if(searchByInputValue!=""){
+    arr=arr.filter((ele)=>{
+      return ele.name.toUpperCase().includes(searchByInputValue.toUpperCase())
+    })
   }
 
   if (filterByLocationValue != "") {
@@ -401,6 +433,9 @@ function fetchUsersData() {
       sortByNameLineBreak.style.display="block"
       filterByBooked.style.display="block"
       filterByBookedLineBreak.style.display = "block";
+      searchByButton.classList.add("user-search")
+      searchByInput.setAttribute("placeholder","Search By Name")
+      paginationDiv.innerHTML=""
       getCardListforUsers(data);
     })
     .catch((error) => {
@@ -418,8 +453,12 @@ getTripsDatabtn.addEventListener("click", () => {
       sortByNameLineBreak.style.display="none"
       filterByBooked.style.display="none"
       filterByBookedLineBreak.style.display = "none";
+     searchByButton.classList.remove("user-search")
+
   fetchData();
 });
+
+
 
 sortByBookings.addEventListener("change",()=>{
   updateValueUser()
@@ -436,14 +475,24 @@ function updateValueUser(){
   let sortByBookingsValue=sortByBookings.value;
   let sortByNameValue=sortByName.value;
   let filterByBookedValue=filterByBooked.value
+  let searchByInputValue=searchByInput.value
 
-  filterDataForUser(sortByBookingsValue,sortByNameValue,filterByBookedValue)
+  filterDataForUser(sortByBookingsValue,sortByNameValue,searchByInputValue,filterByBookedValue)
 }
 
-function filterDataForUser(sortByBookingsValue,sortByNameValue,filterByBookedValue){
+function filterDataForUser(sortByBookingsValue,sortByNameValue,searchByInputValue,filterByBookedValue){
+
   let arr = [...users_fetched_data];
 
-  
+
+  if(searchByInputValue.length!=0){
+   
+    arr=arr.filter((ele)=>{
+      return ele.name.toUpperCase().includes(searchByInputValue.toUpperCase())
+      
+    })
+    console.log(arr)
+  }
 
   if (filterByBookedValue != "") {
     arr = arr.filter((ele) => {
@@ -630,49 +679,8 @@ function patchBookedValue(arr, item) {
     .catch((error) => {
       console.log(error);
     });
-}
-sortAtoZBtn.addEventListener("click", () => {});
+};
 
-sortZtoABtn.addEventListener("click", () => {});
 
-searchByButton.addEventListener("click", () => {
-  search();
-});
 
-function search() {
-  if (searchBySelect.value == "title") {
-    searchByTitle();
-  } else if (searchBySelect.value == "author") {
-    searchByAuthor();
-  } else if (searchBySelect.value == "") {
-    fetchData();
-  }
-}
 
-function searchByTitle() {
-  fetch(`${bookURL}?title=${searchByInput.value}`)
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-      getCardList(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-
-function searchByAuthor() {
-  fetch(`${bookURL}?author=${searchByInput.value}`)
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-      getCardList(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}

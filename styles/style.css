@@ -16,6 +16,28 @@ body {
   font-family: "Sigmar";
   src: url("Sigmar_one/SigmarOne-Regular.ttf");
 }
+/* loader */
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #f35f5e;
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* loader end */
+
 .column > h1 {
   font-family: "Sigmar", cursive;
   color: #e78e7e;
@@ -96,15 +118,15 @@ body {
   }
 
   .card__img {
-    flex-basis: 33%;
+    flex-basis: 50%;
     margin: 0;
     height: auto;
     max-height: 500px;
-    width: 200px;
+    width: 600px;
   }
 
   .card__img img {
-    height: 100%;
+    height: 250px;
     width: 100%;
     object-fit: cover;
   }
@@ -165,7 +187,10 @@ body {
   font-size: 24px;
   color: rgb(59, 55, 55);
   cursor: pointer;
-  
+  margin-right: 100px;
+ border-radius: 40px;
+ display: flex;
+ justify-content: center;
 }
 nav{
   display: flex;
@@ -175,7 +200,8 @@ nav{
   /* padding: 50px 130px; */
   font-weight: bold;
   /* border: 1px solid black; */
-  width: 90%;
+  width: 100%;
+  background-image: url(water.png);
 }
 nav>div:nth-child(2){
   display: flex;
@@ -183,7 +209,12 @@ nav>div:nth-child(2){
   width: 40%;
 
 }
-
+nav h2{
+  font-family: "Sigmar",cursive;
+}
+nav h2:hover{
+  cursor: pointer;
+}
 .circle {
   width: 15px;
   height: 15px;
@@ -214,7 +245,6 @@ a {
   background-color: black;
   color: beige;
   transition: 1s;
- 
 }
 
 .burgerMenu {
@@ -231,7 +261,7 @@ a {
   transition: height 1s ease-in;
   z-index: 10;
   height: 0;
-  text-align: left;
+ 
 
 }
   
@@ -248,11 +278,12 @@ a {
 .burgerMenu a:hover {
   background-color: #ddd;
   color: black;
+ 
 }
 
 .menu-btn:hover+ .burgerMenu{
   height: 500px ;
-  
+  padding-bottom: 10px;
 }
 .burgerMenu:hover{
   height: 500px ;
@@ -304,22 +335,6 @@ a {
   color: black;
 }
 
-.cross {
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-
-.cross {
-  position: absolute;
-  top: 5px;
-  right: 90px;
-  cursor: pointer;
-}
 
 @media screen and (max-width: 1052px) {
   footer {
@@ -429,9 +444,10 @@ select:hover{
 button{
   margin-right: 10px;
   background-color: #e12a00;
-  border:1px solid black;
+  border:3px solid black;
   color: #fff;
 }
+/* 
 button:link,:visited{
     text-transform: uppercase;
     text-decoration: none;
@@ -441,7 +457,7 @@ button:link,:visited{
     transition: all .2s;
     position: absolute;
 }
-
+*/
 button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -452,10 +468,12 @@ button:active {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-button {
+#pagination>button {
     background-color: #fff;
     color: #777;
 }
+
+
 
 
 
@@ -465,10 +483,7 @@ button:hover::after {
     opacity: 0;
 } 
 
-button {
-    animation: moveInBottom 3s ease-out;
-    animation-fill-mode: backwards;
-}
+
 
 @keyframes moveInBottom {
     0% {
