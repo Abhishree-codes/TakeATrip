@@ -100,9 +100,12 @@ adminBtn.addEventListener("click",()=>{
 
 //FOR PRODUCT PAGE 
 
-locationInp.addEventListener("click", () => {
-  console.log(locationInp.value)
-  localStorage.setItem("location", locationInp.value);
+locationInp.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") { // Enter key pressed
+    localStorage.setItem("location", locationInp.value);
+    window.location.href="product.html"
+  }
+  
 //value keeps coming null?
   //use this to display on product page
 });
