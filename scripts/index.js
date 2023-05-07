@@ -150,6 +150,7 @@ imgDivLocationsArray.forEach((ele)=>{
     
     storeLocationKey(ele)
   })
+})
 
 
 subBtn.addEventListener("click", () => {
