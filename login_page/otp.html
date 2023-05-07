@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>OTP Verification Form</title>
+    <link rel="stylesheet" href="otp.css" />
+    <link rel="stylesheet" href="/styles/common.css" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+   
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <i class="bx bxs-check-shield"></i>
+      </header>
+      <h4>Enter OTP Code</h4>
+      <form action="#">
+        <div class="input-field">
+          <input type="number" />
+          <input type="number" disabled />
+          <input type="number" disabled />
+          <input type="number" disabled />
+        </div>
+        <button id="verifyOtp">Verify OTP</button>
+      </form>
+    </div>
+
+        <!-- pop up -->
+        <div class="popup" id="otpPopup">
+          <div class="popup-content">
+            <p id="otpPopupText"></p>
+            <button class="close-btn">Close</button>
+          </div>
+        </div>
+        <!-- pop up -->
+    <script type="module" src="otp.js"></script>
+    <script type="module" src="/scripts/common.js"></script>
+  </body>
+</html>

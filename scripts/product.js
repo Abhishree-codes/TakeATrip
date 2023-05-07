@@ -199,3 +199,10 @@ logo2.addEventListener("click",function(){
   pagi.style.display="flex"
   
 })
+
+
+let takea=document.getElementById("takea")
+
+takea.addEventListener("click",function(){
+  window.location.href="index.html"
+})

@@ -33,6 +33,7 @@ const popup = document.querySelector('.popup');
 const closeBtn = document.querySelector('.close-btn');
 
 
+
 let user_name;
 
 
@@ -149,7 +150,7 @@ imgDivLocationsArray.forEach((ele)=>{
     
     storeLocationKey(ele)
   })
-})
+
 
 subBtn.addEventListener("click", () => {
   showPopup()
