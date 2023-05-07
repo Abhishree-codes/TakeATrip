@@ -203,5 +203,6 @@ logo2.addEventListener("click",function(){
 
 let title=document.getElementById("title")
 title.addEventListener("click",function(){
+window.location.href="imdex.html"
 
-
+})
