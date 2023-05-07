@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #4070f4;
+  background:#f36061 ;
 }
 :where(.container, form, .input-field, header) {
   display: flex;
@@ -20,7 +20,7 @@ body {
   justify-content: center;
 }
 .container {
-  background: #fff;
+  background:#e89186;
   padding: 30px 65px;
   border-radius: 12px;
   row-gap: 20px;
