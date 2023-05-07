@@ -1,0 +1,65 @@
+
+/* .image {
+ height: 55px;
+} */
+.image img{
+ height: 300px;
+}
+
+.images{
+  margin-top: 30px;
+  width: 30%;
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(4,1fr); */
+  gap: 20px;
+}
+
+
+.images img{
+  width: 70%;
+}
+
+button{
+  position: relative;
+  background-color: red;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 50px;
+color: beige;
+  width: 120px;
+  height: 40px;
+  border: none;
+  
+ 
+}
+button:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 5px 2px rgb(114, 22, 7);
+  background-color: rgb(224, 32, 32);
+}
+
+
+.title{
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 2px solid;
+
+}
+.title div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.main{
+  display: flex;
+
+}
+.cont{
+  border: 2px solid;
+  /* width: 50%; */
+}

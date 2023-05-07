@@ -201,8 +201,7 @@ logo2.addEventListener("click",function(){
 })
 
 
-let takea=document.getElementById("takea")
+let title=document.getElementById("title")
+title.addEventListener("click",function(){
 
-takea.addEventListener("click",function(){
-  window.location.href="index.html"
-})
+
