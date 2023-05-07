@@ -199,3 +199,8 @@ logo2.addEventListener("click",function(){
   pagi.style.display="flex"
   
 })
+
+let title=document.getElementById("title")
+title.addEventListener("click",function(){
+  window.location.href="index.html"
+})
