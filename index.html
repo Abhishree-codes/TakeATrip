@@ -107,10 +107,12 @@
                <!-- navbar -->
           <nav>
             <div>
-            <h2>TakeATrip</h2>
+            <h2 onclick="window.location.href='index.html';">TakeATrip</h2>
         </div>
         <div>
+
             <a href="./product.html"><span class="circle">DISCOVER</span></a>
+
             <a href="#">ABOUT</a>
            <a href="#">LOCATION</a>
             <a href="#">REVIEW</a>
@@ -120,17 +122,18 @@
             <div class="dropdown1">
             <button class="menu-btn dropbtn">&#9776;</button>
             <div class="burgerMenu dropdown-content">
-                <a href="#news">Popular Trips</a>
-            <a href="#contact">Budget-Friendly</a>
-            <a href="#about">Shimla</a>
-            <a href="">Ooty</a>
-            <a href="">Maldives</a>
-            <a href="">Varanasi</a>
-            <a href="">Amritsar</a>
-            <a href="">Goa</a>
-            <a href="">Amsterdam</a>
-            <a href="">Udaipur</a>
-            <a href="">Dubai</a>
+<!-- added these two  -->
+                <a href="#" id="account" style="display:none"> My Account</a>
+                <a href="#" id="cart" style="display:none"> My Cart</a>
+            <a href="" id="Shimla">Shimla</a>
+            <a href="" id="Ooty">Ooty</a>
+            <a href="" id="Maldives">Maldives</a>
+            <a href="" id="Varanasi">Varanasi</a>
+            <a href="" id="Amritsar">Amritsar</a>
+            <a href="" id="Goa">Goa</a>
+            <a href="" id="Amsterdam">Amsterdam</a>
+            <a href="" id="Udaipur">Udaipur</a>
+            <a href="" id="Dubai">Dubai</a>
             </div>
           </div>
         </div>
@@ -148,7 +151,7 @@
             </div>
             </div>
             <div class="heading show-on-scroll">
-              Dream Trip Moment
+              Dream Trip Moment<span class="man-image"></span>
             </div>
             <div class="band-aid-bottom-left">
               <div class="img">
@@ -169,8 +172,8 @@
             </h3>
           </div>
           <div>
-            <img src="https://img.freepik.com/premium-photo/feels-confident-giving-hug-camera_1187-319119.jpg?w=360">
-          </div>
+          <img src="images/man-edited.png" style="width: 210px;">
+        </div>
           <div>
             <h3><em>"</em></h3>
             <p>
@@ -221,12 +224,13 @@
                 </div>
             </div>
         </div>
+        
     <div class="pattern">
    <div class="main-heading">
     <p class="show-on-scroll">Explore the Beauty Of</p> 
     <p class="show-on-scroll">The World</p>
    </div>
-    <div class="card inline-photo show-on-scroll">
+    <div class="card inline-photo show-on-scroll" id="Maldives1">
         <div class="card-title">
             <h3>Maldives</h3>
         </div>
@@ -237,7 +241,7 @@
     <div class="arrow">
         <img src="images/arrow.png">
     </div>
-    <div class="card inline-photo show-on-scroll">
+    <div class="card inline-photo show-on-scroll" id="Shimla1">
         <div class="card-title">
             <h3>Shimla</h3>
         </div>
@@ -248,7 +252,7 @@
     <div class="arrow">
         <img src="images/arrow.png">
     </div>
-    <div class="card inline-photo show-on-scroll">
+    <div class="card inline-photo show-on-scroll" id="Varanasi1">
         <div class="card-title">
             <h3>Varanasi</h3>
         </div>
@@ -266,7 +270,7 @@
     <div class="arrow eight">
         <img src="images/arrow.png">
     </div>
-    <div class="card inline-photo show-on-scroll">
+    <div class="card inline-photo show-on-scroll" id="Ooty1">
         <div class="card-title">
             <h3>Ooty</h3>
         </div>
@@ -284,7 +288,7 @@
         <input type="text" id="location-inp" placeholder="Find Location">
     </div>
     </div>
-    <div class="card inline-photo show-on-scroll">
+    <div class="card inline-photo show-on-scroll" id="Amritsar1">
         <div class="card-title">
             <h3>Amritsar</h3>
         </div>
@@ -292,6 +296,7 @@
             <img src="https://media.istockphoto.com/id/545566464/vector/the-golden-temple.jpg?s=612x612&w=0&k=20&c=C6IIpK6mGBPDU-7HglHYqlNJBqY0veovjaPoQ0kGW3E=">
         </div>
     </div>
+
 </div>
 <div class="news">
     <div class="arrow-right">
@@ -324,6 +329,7 @@
     <div id="log-div">
         <button id="b1">LOGIN</button>
         <button id="b2">SIGN UP</button>
+        <button id="c1" display="none">LOGOUT</button>
     </div>
     <div>
         <button id="b3">ADMIN</button>
