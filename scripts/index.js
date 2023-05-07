@@ -25,6 +25,18 @@ let adminBtn = document.getElementById("b3");
 const popup = document.querySelector('.popup');
 const closeBtn = document.querySelector('.close-btn');
 
+loginBtn.addEventListener("click",function(){
+  location.href="/login_page/login.html";
+})
+
+registerBtn.addEventListener("click",function(){
+  location.href="/login_page/login.html";
+})
+
+adminBtn.addEventListener("click",function(){
+  location.href="/login_page/adminlogin.html";
+})
+
 subBtn.addEventListener("click", () => {
   showPopup()
 });
