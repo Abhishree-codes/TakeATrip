@@ -1,5 +1,7 @@
+import { showPopup, hidePopup } from "../scripts/common.js";
+
 const inputs = document.querySelectorAll("input"),
-button = document.querySelector("button");
+button = document.getElementById("verifyOtp");
 
 // iterate over all inputs
 inputs.forEach((input, index1) => {
@@ -51,10 +53,18 @@ window.addEventListener("load", () => inputs[0].focus());
 
 let api="https://api-by-nikhil.onrender.com/users";
 let otp=localStorage.getItem("otp");
+let popUpCloseBtn = document.querySelector('.close-btn');
 
-alert(`Your one time password is ${otp}`)
-      
-button.addEventListener("click",async function(){
+// alert(`Your one time password is ${otp}`)
+showPopup('otpPopup','otpPopupText',`Your one time password is ${otp}`);    
+
+popUpCloseBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
+  hidePopup('otpPopup');
+});
+
+button.addEventListener("click",async function(e){
+    e.preventDefault();
     let flage=true;
     inputs.forEach((input,index)=>{
         if(input.value!=otp[index]){
@@ -65,9 +75,9 @@ button.addEventListener("click",async function(){
     if(flage){
       let data=JSON.parse(localStorage.getItem("user"))
       await PostData(data.name,data.email,data.password);
-        localStorage.clear();
-              localStorage.setItem("logged_in",JSON.stringify(data.email));
-              location.href="/index.html";
+      localStorage.clear();
+      localStorage.setItem("logged_in",JSON.stringify(data.email));
+      location.href="/index.html";
         // let res =  PostData(data.name,data.email,data.password);
         // res.then((res)=>{
         //       localStorage.clear();

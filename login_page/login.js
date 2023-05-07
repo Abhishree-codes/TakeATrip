@@ -97,7 +97,7 @@ getData();
 
             let otp=generateOTP(4);
              localStorage.setItem("otp",otp);
-             location.href="/otp.html";
+             location.href="/login_page/otp.html";
             
             //call api
             // let res = PostData(username.value,email.value,password.value);
