@@ -71,6 +71,8 @@ logOutBtn.addEventListener("click",()=>{
   user_name=""
   localStorage.setItem("logged_in",user_name)
   location.reload()
+  window.scrollTo(0, 0);
+
 })
 }
 
