@@ -1,4 +1,23 @@
 
+let loader=document.getElementById("loader")
+let flag;
+
+window.addEventListener("load", () => {
+  loader.className="loader"
+  featchData(1);
+});
+
+function displayLoader(data){
+  
+  setTimeout(()=>{
+    loader.classList.remove("loader")
+
+    if(flag==true){
+      displayData(data);
+    }
+    ;
+},2000)
+}
 
 
 
@@ -20,11 +39,15 @@ pagi.innerHTML = null;
 for (let i = 1; i <= totalButtons; i++) {
   pagi.append(buttonM(i, i));
 }
+if(res.ok){
+  flag=true
+}else{
+  flag=false
+}
 return res.json()})
 .then((data)=>{
-  
 gdata=[...data]
-  displayData(data)
+  displayLoader(data)
   console.log(data.length)
   totalCount.innerText=data.length+"  Packages"
   
@@ -33,7 +56,7 @@ gdata=[...data]
 )
 
 }
-featchData(1)
+// featchData(1)
 
 
 function buttonM(text,dataID){
@@ -50,6 +73,7 @@ featchData(e.target.dataset.pageNumber)
 
 
 let main=document.querySelector(".container")
+
 function displayData(data){
   window.scrollTo(0, 0);
 main.innerHTML=""
@@ -202,7 +226,7 @@ logo2.addEventListener("click",function(){
 })
 
 
-let title=document.getElementById("takea")
+let title=document.getElementById("title")
 title.addEventListener("click",function(){
 window.location.href="index.html"
 

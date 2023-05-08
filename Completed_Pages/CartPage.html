@@ -571,6 +571,7 @@
 
     // Function for the current user
     function checkUser(data) {
+
         for (let i = 0; i < data.length; ++i) {
             if (key === data[i].email) {
                 return data[i];
@@ -582,7 +583,6 @@
     function fetchUser() {
         fetch(URL).then(response => response.json())
             .then((data) => {
-
                 appndData(checkUser(data));
                 userId = getId(data);
 
