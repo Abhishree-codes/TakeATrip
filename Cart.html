@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+        .contact,
+        .contact a {
+            margin: 5px;
+        }
+
+        nav {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: auto;
+            padding: 50px 130px;
+            font-weight: bold;
+            /* border: 1px solid black; */
+            width: 100%;
+        }
+
+        nav>div:nth-child(2) {
+            display: flex;
+            justify-content: space-evenly;
+            width: 40%;
+
+        }
+
+        .circle {
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            border-radius: 50%;
+            border: 2px solid;
+            text-align: center;
+
+        }
+
+        nav ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 40%;
+        }
+
+        nav li,
+        a {
+            list-style: none;
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+
+        .menu-btn {
+            padding: 2px 10px;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        .menu-btn:hover {
+            background-color: black;
+            color: beige;
+            transition: 1s;
+
+        }
+
+        .burgerMenu {
+            box-sizing: border-box;
+            overflow: hidden;
+            /* justify-content: flex-end; */
+            align-items: center;
+            /* flex-direction: column; */
+            background-color: black;
+            position: absolute;
+            /* padding: 10px; */
+
+            border-radius: 40px;
+            min-width: 200px;
+            /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+            transition: height 0.4s ease-in;
+            z-index: 1;
+            height: 0;
+            /* text-align: left; */
+
+        }
+
+
+
+        .burgerMenu a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+        }
+
+        .burgerMenu a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .menu-btn:hover+.burgerMenu {
+            height: 500px;
+
+        }
+
+        .burgerMenu:hover {
+            height: 500px;
+        }
+
+        .burgerMenu>a {
+            margin: 20px;
+        }
+
+
+        /* testing */
+        /* 
+.menu-btn {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 40px;
+  position: relative;} /* Add this line */
+
+        /* 
+.burgerMenu {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  right: 0; 
+  background-color: black;
+  border-radius: 40px;
+  width: 150px; 
+  z-index: 999;
+  top: 3rem;
+  right: 9rem;
+  padding: 10px;
+}
+.menu-btn:hover + .burgerMenu {
+  display: block;
+} */
+        /* 
+.burgerMenu a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+} */
+
+        .burgerMenu a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .cross {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+
+        .cross {
+            position: absolute;
+            top: 5px;
+            right: 90px;
+            cursor: pointer;
+        }
+
+        /* @media screen and (max-width: 1052px) {
+            footer {
+                padding: 40px;
+            }
+
+            footer .container1 {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 20px;
+            }
+
+        } */
+
+        @media screen and (max-width: 732px) {
+            nav ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                width: 40%;
+            }
+
+            .burgerMenu {
+                /* display: none; */
+                justify-content: flex-end;
+                align-items: center;
+                flex-direction: column;
+                background-color: black;
+                position: absolute;
+                top: 5.8rem;
+                right: 6rem;
+                border-radius: 40px;
+            }
+
+            nav {
+                /* float: none; */
+                margin: auto;
+                /* display: flex; */
+                flex-direction: column;
+                justify-content: center;
+                align-items: space-evenly;
+                padding: 5px;
+                margin: 5px;
+            }
+
+            nav>div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact {
+                margin: 10px;
+                padding: 5px;
+            }
+
+            .booking-card {
+                display: flex;
+                /* flex-direction: column; */
+                flex-wrap: wrap;
+            }
+
+            .card-image {
+                width: 100%;
+            }
+
+            .card-image img {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 606px) {
+            footer .container1 {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            nav ul {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            nav {
+                padding: 40px;
+            }
+
+            .burgerMenu {
+                top: 5rem;
+                right: 2rem;
+            }
+
+        }
+
+        /* div {
+            border: 1px solid red;
+        } */
+
+        /* Header Styles */
+
+        .container {
+            width: 90%;
+            margin: 5px auto;
+            padding: 10px;
+        }
+
+        .booking-card {
+            box-sizing: border-box;
+            display: flex;
+            /* box-shadow: 2px 2px 2px #ec407a; */
+            margin: 10px;
+            padding: 5px;
+            /* background: #FCE4EC; */
+            border-radius: 5px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: border-color 0.1s ease;
+            /* justify-content: center; */
+            /* flex-wrap: wrap; */
+        }
+
+        .booking-card:hover {
+            border-color: #ec407a;
+        }
+
+        .card-details p,
+        .card-details h4 {
+            /* border: 1px solid black; */
+            margin: 2px;
+            padding: 5px;
+        }
+
+
+        .card-image img {
+            object-fit: cover;
+            height: 100%;
+        }
+
+        .cancel {
+            background-color: #ec407a;
+            /* display: flex; */
+            float: right;
+            margin: 5px 10px 10px 0;
+            /* light pink */
+            border: none;
+            border-radius: 5px;
+            /* box-shadow: 0 3px 0 #d7888c; */
+            /* darker shade for bottom shadow */
+            color: #fff;
+            /* white text */
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            /* margin: 0 0 5px 50px; */
+            transition: all 0.2s ease-in-out;
+        }
+
+        .cancel:active {
+            box-shadow: 0 2px 0 #d7888c;
+            /* slightly lighter shade for bottom shadow on hover */
+            transform: scale(0.9);
+        }
+
+        /* Container Styles */
+        /* .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        
+
+        Booking Card Styles
+        .booking-card {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .booking-card img {
+            margin-right: 20px;
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .details h3 {
+            margin-bottom: 10px;
+        }
+
+        .details p {
+            margin-bottom: 5px;
+        }
+
+        .details p span {
+            font-weight: bold;
+        }
+
+        /* Button Styles
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #666;
+            color: #fff;
+        }
+
+        .cancel {
+            background-color: #f44336;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            .booking-card img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            button {
+                padding: 8px 16px;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <div>
+                <h2>TakeATrip</h2>
+            </div>
+            <div class="contact">
+                <a href="#"><span class="circle">DISCOVER</span></a>
+                <a href="#">ABOUT</a>
+                <a href="#">LOCATION</a>
+                <a href="#">REVIEW</a>
+            </div>
+
+            <div id="myLinks" class="dropdown">
+                <!-- <div class="dropdown1"> -->
+                <button class="menu-btn dropbtn">&#9776;</button>
+                <div class="burgerMenu dropdown-content">
+                    <a href="#news">Popular Trips</a>
+                    <a href="#contact">Budget-Friendly</a>
+                    <a href="#about">Shimla</a>
+                    <a href="">Ooty</a>
+                    <a href="">Maldives</a>
+                    <a href="">Varanasi</a>
+                    <a href="">Amritsar</a>
+                    <a href="">Goa</a>
+                    <a href="">Amsterdam</a>
+                    <a href="">Udaipur</a>
+                    <a href="">Dubai</a>
+                </div>
+                <!-- </div> -->
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="container">
+            <h2>Booking Details</h2>
+            <!-- <div class="booking-card">
+                <img src="#" alt="Hotel ABC">
+                <div class="details">
+                    <h3>Hotel ABC</h3>
+                    <p><span>Location:</span> New York</p>
+                    <p><span>Category:</span> 5-star</p>
+                    <p><span>Price:</span> $500</p>
+                    <p><span>Rating:</span> 4.5</p>
+                    <p><span>Description:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                        porta libero.</p>
+                    <p><span>Booked:</span> 25th Dec, 2021 to 3rd Jan, 2022</p>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </div> -->
+        </div>
+    </main>
+</body>
+<script>
+    let key = localStorage.getItem("logged_in") || "";
+
+    fetchUser();
+    function fetchUser() {
+        fetch("https://api-by-nikhil.onrender.com/users")
+            .then(response => response.json())
+            .then((data) => {
+                console.log(checkUser(data));
+                appndData(checkUser(data));
+            }).catch((error) => { console.log(error) });
+    }
+
+
+    function checkUser(data) {
+        for (let i = 0; i < data.length; ++i) {
+            if (key === data[i].email) {
+                return data[i];
+            }
+        }
+    }
+
+
+    let container = document.querySelector(".container");
+
+    function appndData(data) {
+        container.innerHTML = null;
+
+
+        for (let i = 0; i < data.bookings.length; ++i) {
+            let bookingCard = document.createElement("div");
+            bookingCard.setAttribute("class", "booking-card");
+
+            let imgCard = document.createElement("div");
+            imgCard.setAttribute("class", "card-image");
+            let myImg = document.createElement("img");
+            // myImg.src = "image1.jpg";
+            myImg.setAttribute("width", "350px");
+            myImg.src = data.bookings[i].image;
+            let arr = data.bookings[i].image;
+            setInterval(slider, 3000);
+
+            let idx = 0;
+            function slider() {
+                myImg.src = arr[idx++];
+                if (idx >= arr.length) idx = 0;
+            }
+
+            myImg.setAttribute("alt", data.bookings[i].name);
+            imgCard.append(myImg);
+
+            let cardDetails = document.createElement("div");
+            cardDetails.setAttribute("class", "card-details");
+
+            let name = document.createElement("h4");
+            name.textContent = data.bookings[i].name;
+            let location = document.createElement("p");
+            location.textContent = data.bookings[i].location;
+            let category = document.createElement("p");
+            category.textContent = data.bookings[i].category;
+            let price = document.createElement("p");
+            price.textContent = `Rs. ${data.bookings[i].price}`;
+            let rating = document.createElement("p");
+            rating.innerHTML = data.bookings[i].rating;
+
+            let desc = document.createElement("p");
+            desc.textContent = data.bookings[i].description;
+
+            let cancel = document.createElement("button");
+            cancel.setAttribute("class", "cancel");
+            cancel.textContent = "Cancel";
+
+            cardDetails.append(name, location, category, price, rating, desc, cancel);
+
+            bookingCard.append(imgCard, cardDetails);
+
+            container.append(bookingCard);
+        }
+    }
+</script>
+
+</html>

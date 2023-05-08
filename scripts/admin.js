@@ -143,6 +143,7 @@ function paginateData(page, arr) {
 }
 
 function getCardList(data) {
+  document.documentElement.scrollTop = 0
   mainSection.innerHTML = "";
   let cardList = document.createElement("div");
   cardList.className = "card-list";
@@ -157,6 +158,7 @@ function getCardList(data) {
 
 function createCard(item, i) {
   let card = document.createElement("div");
+  card.setAttribute("data-aos","fade-up")
   card.className = "card";
   card.setAttribute("data-id", item.id);
 

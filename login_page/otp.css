@@ -79,3 +79,49 @@ form button.active {
 form button:hover {
   background: #0e4bf1;
 }
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+ 
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+  display: none;
+  align-items: center;
+  
+}
+
+.popup.active {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 20%;
+  margin: auto;
+  margin-top: 300px;
+}
+
+.close-btn {
+  background: #dd6765;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}

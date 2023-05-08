@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        .checkout-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 5rem;
+        }
+
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .checkout-header h2 {
+            font-size: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            flex: 1 0 45%;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group h2 {
+            margin: 0;
+        }
+
+        label {
+            margin-bottom: .5rem;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        #card-type {
+            padding: .6rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus {
+            outline: 2px solid #007aff;
+            border-color: #007aff;
+        }
+
+        small {
+            font-size: .8rem;
+            margin-top: .5rem;
+        }
+
+        #btn {
+            background-color: #007aff;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form span {
+            margin: auto;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                flex-direction: column;
+            }
+
+            .form-group {
+                flex: 1 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <p>Complete your booking details below</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="card-type">Card Type</label>
+                <select id="card-type" name="card-type" required>
+                    <option value="">Select a card type</option>
+                    <option value="Visa">Visa</option>
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="Rupey">Rupey</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+            <div class="form-group">
+                <h2>Confirm Purchase</h2>
+                <p>
+                    <input type="checkbox" id="terms" name="terms" required />
+                    <label for="terms">I agree to the terms and conditions</label>
+                </p>
+            </div>
+            <span><input type="submit" id="btn" value="Proceed to Checkout"></span>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

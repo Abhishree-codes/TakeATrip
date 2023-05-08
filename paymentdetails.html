@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Slip - Hotel and Travel Booking</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    /* Gradient background */
+    body {
+      background: linear-gradient(to bottom, #F6D9E6, #F9C8D6);
+    }
+
+    /* Container styles */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header styles */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 1.5rem;
+    }
+
+    /* Payment info styles */
+    .payment-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Payment details styles */
+    .payment-details {
+      flex-basis: 65%;
+      width: 80%;
+    }
+
+    .payment-details h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .payment-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .payment-label {
+      font-weight: bold;
+      flex-basis: 30%;
+    }
+
+    .payment-value {
+      flex-basis: 70%;
+    }
+
+    .payment-value span {
+      font-weight: bold;
+    }
+
+    /* Payment action styles */
+    .payment-action {
+      flex-basis: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .payment-action button {
+      background-color: #FF6B6B;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .payment-action button:hover {
+      background-color: #E64A4A;
+    }
+
+    /* add media query for screens with max width 768px */
+    @media only screen and (max-width: 768px) {
+
+      /* make the container full screen width and adjust padding */
+      .container {
+        max-width: 100%;
+        padding: 10px;
+      }
+
+      /* adjust font size for smaller screens */
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      /* stack payment details and action vertically */
+      .payment-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* adjust padding for smaller screens */
+      .payment-details {
+        padding: 20px;
+      }
+
+      /* adjust font size for smaller screens */
+      .payment-row {
+        font-size: 1.2rem;
+      }
+
+      /* adjust font size and add margin for smaller screens */
+      .payment-label {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      /* adjust font size and add margin for smaller screens */
+      .payment-value {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      /* adjust button size for smaller screens */
+      .payment-action button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    
+    <div class="payment-info">
+      <div class="payment-details">
+        <h2>Payment Details</h2>
+        <div class="payment-row">
+          <div class="payment-label">Booking ID:</div>
+          <div class="payment-value" id="booking-id"></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Name:</div>
+          <div class="payment-value" id="name"></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Check-in Date:</div>
+          <div class="payment-value" id="checkin-date"></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Check-out Date:</div>
+          <div class="payment-value" id="checkout-date"></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Room Type:</div>
+          <div class="payment-value" id="room-type"></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Price per Night:</div>
+          <div class="payment-value">$<span id="price-per-night"></span></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Number of Nights:</div>
+          <div class="payment-value" id="num-nights"></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Total Price:</div>
+          <div class="payment-value">$<span id="total-price"></span></div>
+        </div>
+      </div>
+      <div class="payment-action">
+        <button onclick="downloadPDF()">Download as PDF</button>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="main.js"></script> -->
+
+</body>
+<script>
+  
+</script>
+</html>

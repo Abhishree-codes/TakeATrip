@@ -148,8 +148,9 @@ getData();
     })
 
     function checkDetails(data) {
+
         for (let i = 0; i < data.length; ++i) {
-            if (data[i].email === newEmail.value && data[i].password === newPass.value) {
+            if (data[i].email === newEmail.value && Number(data[i].password) === Number(newPass.value)) {
                 return true;
             }
         }
