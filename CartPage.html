@@ -449,6 +449,9 @@
                 padding: 20px 40px 30px;
             }
         }
+        #title{
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -458,10 +461,10 @@
     <div class="header">
         <nav>
             <div>
-                <h2>TakeATrip</h2>
+                <h2 id="title">TakeATrip</h2>
             </div>
             <div class="contact">
-                <a href="#"><span class="circle">DISCOVER</span></a>
+                <a href="#"><span class="circle" id="discover">DISCOVER</span></a>
                 <a href="#">ABOUT</a>
                 <a href="#">LOCATION</a>
                 <a href="#">REVIEW</a>
@@ -702,6 +705,17 @@
 
             });
     }
+
+let title=document.getElementById("title")
+title.addEventListener("click",function(){
+    window.location.href="index.html"
+})
+
+let discover=document.getElementById("discover")
+discover.addEventListener("click",function(){
+    window.location.href="product.html"
+})
+
 </script>
 
 </html>
