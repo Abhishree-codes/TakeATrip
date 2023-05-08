@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Navigation bar */
+        .contact,
+        .contact a {
+            margin: 5px;
+        }
+
+        nav {
+            box-sizing: border-box;
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px 130px;
+            font-weight: bold;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav>div:nth-child(2) {
+            display: flex;
+            justify-content: space-evenly;
+            width: 40%;
+
+        }
+
+        .circle {
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            border-radius: 50%;
+            border: 2px solid;
+            text-align: center;
+        }
+
+        nav ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 40%;
+        }
+
+        nav li,
+        a {
+            list-style: none;
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+
+        .menu-btn {
+            padding: 2px 10px;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        .menu-btn:hover {
+            background-color: black;
+            color: beige;
+            transition: 1s;
+        }
+
+        .burgerMenu {
+            box-sizing: border-box;
+            overflow: hidden;
+            height: 0;
+            align-items: center;
+            background-color: black;
+            position: absolute;
+            border-radius: 40px;
+            min-width: 200px;
+            z-index: 1;
+            transition: height 0.4s ease-in;
+        }
+
+        .burgerMenu a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+        }
+
+        .burgerMenu a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .menu-btn:hover+.burgerMenu {
+            height: 500px;
+
+        }
+
+        .burgerMenu:hover {
+            height: 500px;
+        }
+
+        .burgerMenu>a {
+            margin: 20px;
+        }
+
+        .cross {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            top: 5px;
+            right: 90px;
+        }
+
+        /* Cart Body */
+        .cart {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .cart h2 {
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .container {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cart-summary {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+            align-items: center;
+            margin: 20px;
+            background-color: #f6f6f6;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .booking-count {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .total-price {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .proceed-to-checkout {
+            background-color: palevioletred;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .proceed-to-checkout:hover {
+            background-color: #ec407a;
+        }
+
+        .container {
+            width: 90%;
+            margin: 5px auto;
+            padding: 10px;
+        }
+
+        .booking-card {
+            box-sizing: border-box;
+            display: flex;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: border-color 0.1s ease;
+        }
+
+        .booking-card:hover {
+            border-color: #ec407a;
+        }
+
+        .card-details p,
+        .card-details h4 {
+            margin: 2px;
+            padding: 5px;
+        }
+
+        .card-image img {
+            object-fit: cover;
+            height: 100%;
+        }
+
+        .cancel {
+            background-color: #ec407a;
+            float: right;
+            margin: 5px 10px 10px 0;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .cancel:active {
+            box-shadow: 0 2px 0 #d7888c;
+            transform: scale(0.9);
+        }
+
+        /* Footer */
+        #bottom {
+            display: grid;
+            justify-content: end;
+            align-content: end;
+            background: #e8e8e8;
+        }
+
+        #bottom footer {
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding: 50px 100px;
+            background: #fff;
+        }
+
+        .foot {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .foot .sec h2 {
+            position: relative;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .foot .sec p {
+            color: #333;
+
+        }
+
+        .foot .sci {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+        }
+
+        .foot .sci li {
+            list-style: none;
+        }
+
+        .foot .sci li a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: #333;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 20%;
+        }
+
+        .foot .sci li a:hover {
+            background: #ec407a;
+        }
+
+        .foot .sci li a i {
+            color: #fff;
+            font-size: 22px;
+
+        }
+
+        .foot .quicklinks {
+            position: relative;
+        }
+
+        .foot .quicklinks ul li {
+            list-style: none;
+        }
+
+        .foot .quicklinks ul li a {
+            color: #555;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .foot .contact .info {
+            position: relative;
+        }
+
+        .foot .contact .info li {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            margin-bottom: 16px;
+        }
+
+        .foot .contact .info li span {
+            color: #555;
+            font-size: 20px;
+        }
+
+        .foot .contact .info li a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .copyrightText {
+            width: 100%;
+            background: #fff;
+            padding: 20px 100px 30px;
+            text-align: center;
+            color: #555;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        @media screen and (max-width: 606px) {
+
+            /* Navigation Media Queries */
+            .container1 {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            nav ul {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            nav {
+                padding: 40px;
+            }
+
+            .burgerMenu {
+                top: 5rem;
+                right: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            /* Navigation Media Queries */
+            nav ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                width: 40%;
+            }
+
+            .burgerMenu {
+                justify-content: flex-end;
+                align-items: center;
+                flex-direction: column;
+                background-color: black;
+                position: absolute;
+                top: 5.8rem;
+                right: 6rem;
+                border-radius: 40px;
+            }
+
+            nav {
+                margin: auto;
+                flex-direction: column;
+                justify-content: center;
+                align-items: space-evenly;
+                padding: 5px;
+                margin: 5px;
+            }
+
+            nav>div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact {
+                margin: 10px;
+                padding: 5px;
+            }
+
+            /* Card Body Media Queries */
+            .booking-card {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .card-image {
+                width: 100%;
+            }
+
+            .card-image img {
+                width: 100%;
+            }
+
+            /* Footer Part Media Queries */
+            .foot {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* Footer Part Media Queries */
+        @media only screen and (max-width: 991px) {
+            #bottom footer {
+                padding: 40px;
+            }
+
+            .foot {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .copyrightText {
+                padding: 20px 40px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <div class="header">
+        <nav>
+            <div>
+                <h2>TakeATrip</h2>
+            </div>
+            <div class="contact">
+                <a href="#"><span class="circle">DISCOVER</span></a>
+                <a href="#">ABOUT</a>
+                <a href="#">LOCATION</a>
+                <a href="#">REVIEW</a>
+            </div>
+            <div class="dropdown" id="myLinks">
+                <button class="menu-btn dropbtn">&#9776;</button>
+                <div class="burgerMenu dropdown-content">
+                    <a href="#news">Popular Trips</a>
+                    <a href="#contact">Budget-Friendly</a>
+                    <a href="#about">Shimla</a>
+                    <a href="">Ooty</a>
+                    <a href="">Maldives</a>
+                    <a href="">Varanasi</a>
+                    <a href="">Amritsar</a>
+                    <a href="">Goa</a>
+                    <a href="">Amsterdam</a>
+                    <a href="">Udaipur</a>
+                    <a href="">Dubai</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Cart body -->
+    <div class="cart">
+        <h2>Your Bookings</h2>
+        <div class="container">
+            <!-- All bookings append here -->
+        </div>
+
+        <div class="cart-summary">
+            <div class="booking-count">
+                Total Bookings: <span id="booking-count">0</span>
+            </div>
+            <div class="total-price">
+                Total Price: ₹<span id="total-price">0.00</span>
+            </div>
+            <div><button class="proceed-to-checkout">Proceed to Checkout</button></div>
+        </div>
+    </div>
+
+    <!-- Footer Part -->
+    <div id="bottom">
+        <footer>
+            <div class="foot">
+                <div class="sec aboutus">
+                    <h2>About Us</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iure mollitia, impedit laboriosam
+                        laudantium minima.</p>
+                    <ul class="sci">
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="sec quicklinks">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="sec quicklinks">
+                    <h2>Shop</h2>
+                    <ul>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Kids</a></li>
+                        <li><a href="#">Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="sec contact">
+                    <h2>Contact Us</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fa-solid fa-phone"></i></span>
+                            <p><a href="#">+1 234 56789</a></p>
+                        </li>
+                        <li>
+                            <span><i class="fa-solid fa-envelope"></i></span>
+                            <p><a href="#">nikhil@gmail.com</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="copyrightText">
+            <p>Copyright 2023 TakeATrip. All Rights Reserved.</p>
+        </div>
+    </div>
+
+</body>
+<script>
+    // Getting data from the local storage
+    let key = localStorage.getItem("logged_in") || "";
+    let bookedDetails = JSON.parse(localStorage.getItem("bookedDetails")) || {};
+
+    let URL = "https://api-by-nikhil.onrender.com/users";
+    let userId;
+    fetchUser();
+
+    // Function for the current user
+    function checkUser(data) {
+        for (let i = 0; i < data.length; ++i) {
+            if (key === data[i].email) {
+                return data[i];
+            }
+        }
+    }
+
+    // Fetching the data from the server
+    function fetchUser() {
+        fetch(URL).then(response => response.json())
+            .then((data) => {
+
+                appndData(checkUser(data));
+                userId = getId(data);
+
+            }).catch((error) => { console.log(error) });
+    }
+
+    // Appending the data from the server into the body
+    let bookingCount = document.getElementById("booking-count");
+    let totalMoney = document.getElementById("total-price");
+    let container = document.querySelector(".container");
+
+    function appndData(data) {
+        container.innerHTML = null;
+
+        let len = data.bookings.length;
+        let totalPrice = 0;
+        bookingCount.textContent = len;
+
+        for (let i = 0; i < len; ++i) {
+            let bookingCard = document.createElement("div");
+            bookingCard.setAttribute("class", "booking-card");
+
+            let imgCard = document.createElement("div");
+            imgCard.setAttribute("class", "card-image");
+            let myImg = document.createElement("img");
+            myImg.setAttribute("width", "350px");
+            myImg.src = data.bookings[i].image;
+            let arr = data.bookings[i].image;
+            setInterval(slider, 3000);
+
+            let idx = 0;
+            function slider() {
+                myImg.src = arr[idx++];
+                if (idx >= arr.length) idx = 0;
+            }
+
+            myImg.setAttribute("alt", data.bookings[i].name);
+            imgCard.append(myImg);
+
+            let cardDetails = document.createElement("div");
+            cardDetails.setAttribute("class", "card-details");
+
+            let name = document.createElement("h4");
+            name.textContent = data.bookings[i].name;
+            let location = document.createElement("p");
+            location.textContent = data.bookings[i].location;
+            let category = document.createElement("p");
+            category.textContent = data.bookings[i].category;
+            let price = document.createElement("p");
+            price.textContent = `Rs. ${data.bookings[i].price}`;
+            let rating = document.createElement("p");
+            rating.innerHTML = data.bookings[i].rating;
+
+            let desc = document.createElement("p");
+            desc.textContent = data.bookings[i].description;
+
+            let cancel = document.createElement("button");
+            cancel.setAttribute("class", "cancel");
+            cancel.textContent = "Cancel";
+
+            cancel.addEventListener("click", (e) => {
+                e.preventDefault();
+                deleteBooking(data.bookings[i].name);
+
+            })
+
+            cardDetails.append(name, location, category, price, rating, desc, cancel);
+
+            bookingCard.append(imgCard, cardDetails);
+
+            container.append(bookingCard);
+
+            totalPrice += +(data.bookings[i].price);
+        }
+
+        totalMoney.textContent = totalPrice;
+
+        localStorage.setItem("bookingDetails", JSON.stringify({
+            totalBookings: len,
+            totalPrice: totalPrice
+        }));
+
+    }
+
+    // Getting the current user ID
+    function getId(data) {
+        for (let i = 0; i < data.length; ++i) {
+            if (data[i].email === key) return data[i].id;
+        }
+    }
+
+    // Delete Booking Function
+    function deleteBooking(name) {
+        let book = [];
+
+        fetch(`${URL}/${userId}`)
+            .then(res => res.json())
+            .then((items) => {
+
+                for (let i = 0; i < items.bookings.length; ++i) {
+                    if (items.bookings[i].name !== name) {
+                        book.push(items.bookings[i]);
+                    }
+                }
+
+                // Updating Bookings Array
+                fetch(`${URL}/${userId}`, {
+                    method: "PATCH",
+
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ bookings: book })
+
+                }).then(res => {
+                    return res.json();
+
+                }).then((data) => {
+                    appndData(data);
+
+                }).catch((error) => { console.log(error) });
+
+            });
+    }
+</script>
+
+</html>
