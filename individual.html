@@ -39,6 +39,7 @@
             font-weight: bold;
             /* border: 1px solid black; */
             width: 100%;
+            background-image: url("styles/water.png");
         }
 
         nav>div:nth-child(2) {
@@ -305,7 +306,7 @@
         }
 
         /* footer part */
-        #bottom {
+        /* #bottom {
             display: grid;
             justify-content: end;
             align-content: end;
@@ -404,43 +405,209 @@
         .foot .contact .info li a {
             color: #555;
             text-decoration: none;
-        }
+        }*/
 
-        .copyrightText {
+       /* .copyrightText {
             width: 100%;
             background: #fff;
             padding: 20px 100px 30px;
             text-align: center;
             color: #555;
             border: 1px solid rgba(0, 0, 0, 0.15);
+        } */
+        @font-face {
+    font-family: "Doodle Font";
+    src: url("kimberly-geswein_kg-already-home/KGAlreadyHome.ttf");
+  }
+  @font-face {
+    font-family: "Sigmar";
+    src: url("styles/Sigmar_one/SigmarOne-Regular.ttf");
+  }
+#title{
+    font-family: "Sigmar",cursive;
+}
+        #title:hover{
+            cursor: pointer;
         }
-
-        @media only screen and (max-width: 768px) {
+        /* @media only screen and (max-width: 768px) {
             .foot {
                 width: 100%;
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 gap: 20px;
             }
-        }
+        } */
 
-        /* Footer Part Media Queries */
-        @media only screen and (max-width: 991px) {
-            #bottom footer {
-                padding: 40px;
-            }
+       
 
-            .foot {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
+        /* footer change */
+        /* footer styling */
+        button:hover{
+    cursor: pointer;
+  }
+  #log-div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e22901;
+    margin-top: 20px;
+    width: 260px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: -10px 6px;
+    border: 2px solid black;
+  }
+  .line-break{
+    /* background-color: #dd6765;*/
+    background-image: url("styles/footer.png");
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+  }
+  .line-break>hr{
+    border: none;
+    height: 1px;
+    background-color: #4c221a;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #log-div>button:nth-child(1){
+    border: 2px solid black;
+  }
+  #log-div>button:nth-child(2){
+    border: 2px solid black;
+  }
+  #log-div>button:nth-child(3){
+    border: 2px solid black;
+  }
+  
+#log-div button {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    color: beige;
+    width: 120px;
+    height: 40px;
+    border: 1px solid transparent;
+  }
 
-            .copyrightText {
-                padding: 20px 40px 30px;
-            }
-        }
+  #b1 {
+    background-color: black;
+  }
+  #b2 {
+    background-color: #e22901;
+  }
+ 
+  
+  footer {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    /* background-color: #dd6765; */
+    background-image: url("styles/footer.png");
+    padding: 50px 100px;
+  
+    font-weight: bold;
+  }
+  footer .container1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* sec buttons */
+  
+  #sec-btns{
+    display: grid;
+    flex-direction: column;
+    
+  }
+  #b3{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    width: 120px;
+    height: 40px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+  }
+  footer .container1 .sec h2 {
+    position: relative;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  footer .container1 .sec p {
+    color: #564f4f;
+  }
+  footer .container1 .links {
+    position: relative;
+  }
+  
+  footer .container1 .links ul li {
+    list-style: none;
+  }
+  
+  footer .container1 .links ul li a {
+    color: #564f4f;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+  } 
+   #log-div button{
+  margin-right: 10px;
+  background-color: #e12a00;
+  border:1px solid black;
+  color: #fff;
+}
+#log-div button:link,:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+#log-div button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#log-div button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+ /* Footer Part Media Queries */
+ @media screen and (max-width: 1052px) {
+  footer {
+    padding: 40px;
+  }
+  footer .container1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+  
+}
+
+@media screen and (max-width: 606px) {
+  footer .container1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+}
     </style>
 
 </head>
@@ -451,7 +618,7 @@
     <div class="header">
         <nav>
             <div>
-                <h2>TakeATrip</h2>
+                <h2 id="title">TakeATrip</h2>
             </div>
             <div class="contact">
                 <a href="#"><span class="circle">DISCOVER</span></a>
@@ -505,54 +672,63 @@
     </div>
     <div id="bottom">
         <footer>
-            <div class="foot">
-                <div class="sec aboutus">
-                    <h2>About Us</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iure mollitia, impedit laboriosam
-                        laudantium minima.</p>
-                    <ul class="sci">
-                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                    </ul>
-                </div>
-                <div class="sec quicklinks">
-                    <h2>Support</h2>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="sec quicklinks">
-                    <h2>Shop</h2>
-                    <ul>
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Kids</a></li>
-                        <li><a href="#">Shoes</a></li>
-                    </ul>
-                </div>
-                <div class="sec contact">
-                    <h2>Contact Us</h2>
-                    <ul class="info">
-                        <li>
-                            <span><i class="fa-solid fa-phone"></i></span>
-                            <p><a href="#">+1 234 56789</a></p>
-                        </li>
-                        <li>
-                            <span><i class="fa-solid fa-envelope"></i></span>
-                            <p><a href="#">nikhil@gmail.com</a></p>
-                        </li>
-                    </ul>
-                </div>
+            <div class="container1">
+                <div class="sec" id="sec-btns">
+                    <h2>TakeATrip</h2>
+            <p>Subscribe to our newsletter to get more informations</p>
+            <div id="log-div">
+                <button id="b1">LOGIN</button>
+                <button id="b2">SIGN UP</button>
+                <button id="c1" display="none">LOGOUT</button>
             </div>
+            <div>
+                <button id="b3">ADMIN</button>
+                    </div>
+            </div>
+                <div class="sec links">
+                    <h2 class="h2tag">Navigation</h2>
+                    <ul>
+                        <li>  <a href="#">HOME</a></li>
+                        <li><a href="#">Location</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                      
+                        
+                        
+                    </ul>
+                     
+                </div>
+                <div class="sec links">
+        
+                    <h2 class="h2tag">About Us</h2>
+                 
+                     <ul>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">CONTACTS</a></li>
+                        <li><a href="#">ADDRESS</a></li>
+                        
+                        
+                        
+                     </ul>
+                </div>
+                <div class="sec links">
+        
+                <h2 class="h2tag">Help</h2>
+                <ul>
+                    <li><a href="#">CUSTOMER SERVICE</a></li>
+                    <li> <a href="#">FAQ</a></li>
+                    <li><a href="#">Support NDA</a></li>
+                    
+                   
+                    
+                </ul>
+                </div>
+        
+            </div>
+         
         </footer>
-        <div class="copyrightText">
-            <p>Copyright 2023 TakeATrip. All Rights Reserved.</p>
-        </div>
+        <div class="line-break">
+          <hr>
+          </div>
     </div>
 
 
@@ -698,6 +874,11 @@
             return element.name === e;
         });
     }
+    let title=document.getElementById("title")
+title.addEventListener("click",function(){
+    window.location.href="index.html"
+})
+
 </script>
 
 </html>

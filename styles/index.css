@@ -46,7 +46,7 @@ button:hover{
 }
 
 
-button {
+#log-div>button {
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 50px;
