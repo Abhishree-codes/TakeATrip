@@ -5,32 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TakeATrip</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./styles/product.css">
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-  <!-- navbar -->
-  <nav>
-   
-    <h2 id="takea">TakeATrip</h2>
-    <ul>
-        <li><a href="#"><span class="circle" id="discover">DISCOVER</span></a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">LOCATION</a></li>
-        <li><a href="#">REVIEW</a></li>
-    </ul>
-    <div id="myLinks">
-        
-        <button class="menu-btn">&#9776;</button>
-        <div class="burgerMenu">
-            <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <p class="cross">&#9587</p>
-        </div>
-          </a>
+         <!-- navbar -->
+         <nav>
+          <div>
+          <h2 onclick="window.location.href='index.html';">TakeATrip</h2>
       </div>
- </nav>
+      <div>
+
+          <a href="./product.html"><span class="circle">DISCOVER</span></a>
+
+          <a href="#">ABOUT</a>
+         <a href="#">LOCATION</a>
+          <a href="#">REVIEW</a>
+      </div>
+      
+      <div id="myLinks" class="dropdown">
+          <div class="dropdown1">
+          <button class="menu-btn dropbtn">&#9776;</button>
+          <div class="burgerMenu dropdown-content">
+<!-- added these two  -->
+              <a href="#" id="account" style="display:none"> My Account</a>
+              <a href="#" id="cart" style="display:none"> My Cart</a>
+          <a href="" id="Shimla">Shimla</a>
+          <a href="" id="Ooty">Ooty</a>
+          <a href="" id="Maldives">Maldives</a>
+          <a href="" id="Varanasi">Varanasi</a>
+          <a href="" id="Amritsar">Amritsar</a>
+          <a href="" id="Goa">Goa</a>
+          <a href="" id="Amsterdam">Amsterdam</a>
+          <a href="" id="Udaipur">Udaipur</a>
+          <a href="" id="Dubai">Dubai</a>
+          </div>
+        </div>
+      </div>
+   </nav>
   <div class="nav1">
     <div class="nav2">
         <div class="logo1">
@@ -58,11 +71,12 @@
     <p>Popular <button id="prup" class="hide">↑ </button> <button id="prdon" class="hide">↓</button></p>
     <!-- <p>Recenty Added <button id="reup" class="hide">↑ </button> <button id="redon" class="hide">↓</button></p> -->
   </div>
-    <div class="container">
+    <div class="container" >
     </div>
     <div class="pagination-container"></div>
     
 </body>
 <script src="./scripts/product.js"></script>
-<script src="./scripts/index.js"></script>
+
+
 </html>

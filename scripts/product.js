@@ -71,6 +71,7 @@ let card=document.createElement("div")
 
 card.className=("card")
 card.setAttribute("data-id",item.id)
+// card.setAttribute("data-aos","zoom-out-right")
 
 
 let cardImg=document.createElement("div")
@@ -205,4 +206,15 @@ let title=document.getElementById("takea")
 title.addEventListener("click",function(){
 window.location.href="index.html"
 
+})
+
+
+
+
+
+let discover=document.getElementById("discover")
+
+discover.addEventListener("click",function(){
+
+    window.location.href="product.html"
 })
