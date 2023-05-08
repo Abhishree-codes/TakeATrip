@@ -51,7 +51,7 @@ featchData(e.target.dataset.pageNumber)
 
 let main=document.querySelector(".container")
 function displayData(data){
-
+  window.scrollTo(0, 0);
 main.innerHTML=""
 
 let cardList=document.createElement("div")
@@ -71,8 +71,8 @@ let card=document.createElement("div")
 
 card.className=("card")
 card.setAttribute("data-id",item.id)
-// card.setAttribute("data-aos","zoom-out-right")
-
+ card.setAttribute("data-aos","slide-up")
+card.setAttribute("data-aos-duration",20000)
 
 let cardImg=document.createElement("div")
 cardImg.className=("card__img")
