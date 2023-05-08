@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        section .imgBx {
+            position: relative;
+            width: 50%;
+            height: 100%;
+        }
+
+        section .imgBx:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(225deg, #e91e63, #03a9f4);
+            z-index: 1;
+            mix-blend-mode: screen;
+        }
+
+        section .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        section .contentBx {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+        }
+
+        section .contentBx .formBx {
+            width: 50%;
+        }
+
+        section .contentBx .formBx h2 {
+            color: #607d8b;
+            font-weight: 600;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            border-bottom: 4px solid #ff4584;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        section .contentBx .formBx .inputBx {
+            margin: 20px auto;
+        }
+
+        #signUp .inputBx {
+            margin: 10px auto;
+        }
+
+        section .contentBx .formBx .inputBx span {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: inline-block;
+            color: #607d8b;
+            font-weight: 300;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        section .contentBx .formBx .inputBx input {
+            width: 100%;
+            padding: 10px 20px;
+            outline: none;
+            font-weight: 400;
+            border: 1px solid #607d8b;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #607d8b;
+            background: transparent;
+            border-radius: 30px;
+        }
+
+        section .contentBx .formBx .inputBx input[type="submit"] {
+            background: #ff4584;
+            color: #fff;
+            outline: none;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        section .contentBx .formBx .inputBx input[type="submit"]:hover {
+            background: #f53677;
+        }
+
+        section .contentBx .formBx .remember {
+            color: #607d8b;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        section .contentBx .formBx .inputBx p {
+            text-align: center;
+            font-size: 14px;
+            color: #607d8b;
+        }
+
+        section .contentBx .formBx .inputBx p a {
+            color: #ff4584;
+        }
+
+        section .contentBx .formBx h4 {
+            color: #607d8b;
+            text-align: center;
+            margin: 20px 0 10px 0;
+            font-weight: 500;
+        }
+
+        section .contentBx .formBx .sci {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section .contentBx .formBx .sci li {
+            list-style: none;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #607d8b;
+            border-radius: 50%;
+            margin: 0 7px;
+            cursor: pointer;
+        }
+
+        section .contentBx .formBx .sci li:hover {
+            background: #ff4584;
+        }
+
+        section .contentBx .formBx .sci li img {
+            transform: scale(0.5);
+            filter: invert(1);
+        }
+
+        #signUp {
+            display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+            section .imgBx {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            section .contentBx {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            section .contentBx .formBx {
+                width: 100%;
+                padding: 40px;
+                background: rgb(255, 255, 255, 0.8);
+                margin: 50px;
+            }
+
+            section .contentBx .formBx h3 {
+                color: #607d8b;
+                text-align: center;
+                margin: 30px 0 10px;
+                font-weight: 500;
+            }
+        }
+
+        .spinner {
+            display: none;
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 7px solid #ccc;
+            border-top-color: #ff4584;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!-- background image -->
+        <div class="imgBx">
+            <img src="bg.jpg" alt="">
+        </div>
+
+        <!-- form division -->
+        <div class="contentBx">
+
+            <!-- signup form -->
+            <div id="signUp" class="formBx">
+                <h2 id="signupText">Sign Up</h2>
+                <form action="">
+                    <div class="inputBx">
+                        <span>Username</span>
+                        <input type="text" name="" id="username">
+                    </div>
+                    <div class="inputBx">
+                        <span>Email</span>
+                        <input type="email" name="" id="email">
+                    </div>
+                    <div class="inputBx">
+                        <span>Create Password</span>
+                        <input type="password" name="" id="pass">
+                    </div>
+                    <div class="inputBx">
+                        <span>Confirm Password</span>
+                        <input type="password" name="" id="confirmPass">
+                    </div>
+                    <div class="remember">
+                        <label for="">
+                            <input type="checkbox" name="" id="check">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Sign in" id="userSubmit">
+                    </div>
+                    <div class="inputBx">
+                        <p>Already a member ?
+                            <a href="#" class="login">Log in</a>
+                        </p>
+                    </div>
+                </form>
+                <h4>Login with social media</h4>
+                <ul class="sci">
+                    <li><img src="instagram.png" alt="" width="45px"></li>
+                    <li><img src="twitter.png" alt="" width="45px"></li>
+                    <li><img src="facebook.png" alt="" width="45px"></li>
+                </ul>
+            </div>
+
+            <!-- signin form -->
+            <div class="formBx" id="signIn">
+                <h2 id="signinText">Login</h2>
+                <form action="">
+                    <div class="inputBx">
+                        <span>Email</span>
+                        <input type="email" name="" class="email">
+                    </div>
+                    <div class="inputBx">
+                        <span>Password</span>
+                        <input type="password" name="" class="pass">
+                    </div>
+                    <div class="remember">
+                        <label for="">
+                            <input type="checkbox" name="" class="check">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Sign in" id="userLogin">
+                    </div>
+                    <div class="inputBx">
+                        <p>Don't have an account ?
+                            <a href="#" class="create">SignUp</a>
+                        </p>
+                    </div>
+                </form>
+                <h4>Login with social media</h4>
+                <ul class="sci">
+                    <li><img src="instagram.png" alt="" width="45px"></li>
+                    <li><img src="twitter.png" alt="" width="45px"></li>
+                    <li><img src="facebook.png" alt="" width="45px"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- spinner -->
+        <div class="spinner"></div>
+    </section>
+</body>
+
+<script>
+    // to make the form visible and invisible
+    let container = document.querySelector(".contentBx");
+    let signUpClick = document.querySelector(".create");
+    let signInClick = document.querySelector(".login");
+    const URL = "https://api-by-nikhil.onrender.com/users";
+
+    signUpClick.onclick = () => {
+        document.getElementById("signIn").style.display = "none";
+        document.getElementById("signUp").style.display = "block";
+    }
+    signInClick.onclick = () => {
+        document.getElementById("signIn").style.display = "block";
+        document.getElementById("signUp").style.display = "none";
+    }
+
+    // catching user key from local storage
+    let key = localStorage.getItem("logged_in") || null;
+
+    // catching signup credencials
+    let username = document.getElementById("username");
+    let newEmail = document.getElementById("email");
+    let newPass = document.getElementById("pass");
+    let confirmPass = document.getElementById("confirmPass");
+
+    // Regiteration form event
+    document.getElementById("userSubmit").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        fetch(URL).then(res => res.json())
+            .then((users) => {
+
+                if (newPass.value !== confirmPass.value) {
+                    signupText.innerText = "Please enter the same password";
+                    signupText.style.color = "red";
+                    signupText.style.fontSize = "16px";
+
+                } else if (checkExistingUser(users)) {
+                    signupText.innerText = "Account alredy exist";
+                    signupText.style.color = "#00dfc4";
+                    signupText.style.fontSize = "17px";
+
+                } else {
+                    createUser();
+                    signupText.innerText = "Account Created";
+                    signupText.style.color = "green";
+
+                }
+
+            }).catch((error) => console.log(error));
+    });
+
+    // function for if the account already exits or not
+    function checkExistingUser(data) {
+        for (let i = 0; i < data.length; ++i) {
+            if (newEmail.value === data[i].email) return true;
+        }
+        return false;
+    }
+
+    // creating a user credencials
+    function createUser() {
+        fetch(URL, {
+
+            method: "POST",
+
+            body: JSON.stringify({
+                name: username.value,
+                email: newEmail.value,
+                password: newPass.value,
+                image: "https://www.clipartkey.com/mpngs/m/94-943097_stockvader-predicted-adig-user-profile-image-png.png",
+                bookings: [],
+                booked: false
+            }),
+
+            headers: { "Content-Type": "application/json" }
+
+        }).then(response => response.json())
+            .then((data) => {
+                console.log(data);
+
+            }).catch((error) => { console.log(error) });
+
+        localStorage.setItem("logged_in", newEmail.value.trim());
+    }
+
+    // catching login credencials
+    let email = document.querySelector(".email");
+    let password = document.querySelector(".pass");
+    let signupText = document.getElementById("signupText");
+    let signinText = document.getElementById("signinText");
+
+    // catching spinner
+    let spinner = document.querySelector(".spinner");
+
+    // login form event
+    document.getElementById("userLogin").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        fetch(URL).then(res => res.json())
+            .then((users) => {
+
+                if (checkForLogin(users)) {
+                    signinText.innerText = "Account doesn't exist";
+                    signinText.style.color = "goldenrod";
+
+                } else if (checkDetails(users)) {
+                    signinText.innerText = "Login Successful";
+                    signinText.style.color = "green";
+
+                    container.style.display = "none";
+                    spinner.style.display = "block";
+                    setTimeout(() => {
+                        spinner.style.display = "block";
+                        window.location.href = "userLogin.html";
+                    }, 1000);
+
+                    localStorage.setItem("logged_in", email.value);
+
+                } else {
+                    signinText.innerText = "Email or password is incorrect";
+                    signinText.style.fontSize = "16px";
+                    signinText.style.color = "red";
+
+                }
+
+            }).catch((error) => console.log(error));
+    });
+
+    // function for checking the correct details
+    function checkDetails(data) {
+        for (let i = 0; i < data.length; ++i) {
+            if (data[i].email === email.value && data[i].password === password.value) return true;
+        }
+        return false;
+    }
+
+    // function for the account exits or not
+    function checkForLogin(data) {
+        for (let i = 0; i < data.length; ++i) {
+            if (email.value === data[i].email) return false;
+        }
+        return true;
+    }
+
+</script>
+
+</html>
