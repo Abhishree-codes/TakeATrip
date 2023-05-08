@@ -559,7 +559,7 @@
 </body>
 <script>
     // Getting data from the local storage
-    let key = localStorage.getItem("logged_in") || "";
+    let key = JSON.parse(localStorage.getItem("logged_in")) || "";
     let bookedDetails = JSON.parse(localStorage.getItem("bookedDetails")) || {};
 
     let URL = "https://api-by-nikhil.onrender.com/users";

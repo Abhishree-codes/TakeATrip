@@ -117,7 +117,7 @@ viewB.id=("view-details")
 viewB.addEventListener("click",function(){
 localStorage.setItem("view-details",JSON.stringify(item))
 
-window.location.href="individual-pro.html"
+window.location.href="individual.html"
 })
 let pay=document.createElement("p")
 pay.innerText="Pay & Hold  ₹ 1,000"

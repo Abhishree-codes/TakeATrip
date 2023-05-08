@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="./styles/indpro.css">
-    <link rel="stylesheet" href="./styles/index.css"> -->
+    
     <style>
         * {
             margin: 0;
@@ -136,42 +135,6 @@
         }
 
 
-        /* testing */
-        /* 
-.menu-btn {
-  display: inline-block;
-  background-color: black;
-  color: white;
-  padding: 7px 10px;
-  border-radius: 40px;
-  position: relative;} /* Add this line */
-
-        /* 
-.burgerMenu {
-  display: none;
-  position: absolute;
-  top: 100%; 
-  right: 0; 
-  background-color: black;
-  border-radius: 40px;
-  width: 150px; 
-  z-index: 999;
-  top: 3rem;
-  right: 9rem;
-  padding: 10px;
-}
-.menu-btn:hover + .burgerMenu {
-  display: block;
-} */
-        /* 
-.burgerMenu a {
-  display: block;
-  padding: 10px 15px;
-  color: white;
-  text-decoration: none;
-  border-radius: 40px;
-} */
-
         .burgerMenu a:hover {
             background-color: #ddd;
             color: black;
@@ -194,19 +157,6 @@
             cursor: pointer;
         }
 
-        /* @media screen and (max-width: 1052px) {
-            footer {
-                padding: 40px;
-            }
-
-            footer .container1 {
-                width: 100%;
-                display: grid;
-                grid-template-columns: 2fr 1fr;
-                gap: 20px;
-            }
-
-        } */
 
         @media screen and (max-width: 732px) {
             nav ul {
@@ -606,8 +556,7 @@
     </div>
 
 
-    <!-- <script src="./scripts/individual.js"></script>
-  <script src="./scripts/index.js"></script> -->
+ 
 </body>
 <script>
     const usersURL = "https://api-by-nikhil.onrender.com/users";
@@ -676,12 +625,12 @@
     let book = document.getElementById("book");
 
     book.addEventListener("click", function () {
-        let a = localStorage.getItem("logged_in") || "";
+        let a = JSON.parse(localStorage.getItem("logged_in")) || "";
         let imgdata = [];
+      
         if (a == "") {
-            window.location.href = "loginPage.html";
+            window.location.href = "./login_page/login.html";
         }
-
 
         else {
 
@@ -692,7 +641,7 @@
                         return res.json();
                     })
                     .then((dat) => {
-                        console.log(dat);
+                       
                         let filt = [...dat].filter(function (e) {
                             if (e.email == a) {
                                 return true
@@ -701,7 +650,9 @@
                                 return false
                             }
                         })
+                        console.log(filt)
                         let id = filt[0].id
+                       
 
                         imgdata = filt[0].bookings
 
@@ -724,6 +675,7 @@
                         }).then((res) => res.json())
                             .then((data) => {
                                 console.log(data)
+                                window.location.href = "CartPage.html";
                             })
                     })
 
@@ -735,7 +687,6 @@
 
 
             fetchUserData();
-            window.location.href = "../Honey1/CartPage.html";
         }
 
 
