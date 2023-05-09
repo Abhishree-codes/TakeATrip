@@ -4,6 +4,7 @@ let flag;
 
 window.addEventListener("load", () => {
   loader.className="loader"
+  console.log("loader")
   featchData(1);
 });
 
@@ -150,7 +151,7 @@ let earn=document.createElement("p")
 earn.innerText="Earn eCash ₹ 1,289"
 
 pricDiv.append(EMI,price,viewB,pay,earn)
-
+pricDiv.className="price-div"
 card.append(cardImg,cardBody,pricDiv)
 return card
 

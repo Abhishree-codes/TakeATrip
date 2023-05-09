@@ -35,7 +35,9 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
-
+.price-div{
+  margin-left: -50px;
+}
 .card__img{
     position: relative;
     /* margin: 10px 10px 0px 10px; */
@@ -79,6 +81,7 @@ nav>div>h2{
     font-family: "Sigmar",cursive;
 }
 nav{
+  margin-top: -60px;
     background-image: url(water.png);
 }
 .nav1{
@@ -299,10 +302,11 @@ button {
   .loader {
     border: 5px solid white;
     border-radius: 50%;
-    border-top: 5px solid #f35f5e;
+    border-top: 5px solid black;
     position: absolute;
-    top: 70%;
-    left: 60%;
+    z-index: 999;
+    top: 35%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
