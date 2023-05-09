@@ -120,7 +120,7 @@ async function PostData(username,emailId,pwd){
             localStorage.setItem("logged_in",JSON.stringify(newEmail.value));
             singinText.innerText = "Login Successful";
             singinText.style.color = "greenyellow";
-            window.location.href="../../index.html"
+            window.location.href="../../admin.html"
 
             // spin.style.display = "none";
             // spinner.style.display = "block";

@@ -613,6 +613,51 @@
           gap: 20px;
         }
       }
+      /* testing pop up */
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s;
+        display: none;
+        align-items: center;
+      }
+
+      .popup.active {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+      }
+
+      .popup-content {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        width: 20%;
+        margin: auto;
+        margin-top: 300px;
+      }
+
+      .close-btn {
+        background: #dd6765;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
     </style>
   </head>
 
@@ -634,8 +679,8 @@
           <!-- <div class="dropdown1"> -->
           <button class="menu-btn dropbtn">&#9776;</button>
           <div class="burgerMenu dropdown-content">
-            <a href="#news">Popular Trips</a>
-            <a href="#contact">Budget-Friendly</a>
+            <a href="#" id="account"> My Account</a>
+            <a href="./CartPage.html" id="cart"> My Cart</a>
             <a href="#about">Shimla</a>
             <a href="">Ooty</a>
             <a href="">Maldives</a>
@@ -652,6 +697,14 @@
     </div>
 
     <div class="main">
+      <!-- pop up -->
+      <div class="popup">
+        <div class="popup-content">
+          <p></p>
+          <button class="close-btn">Close</button>
+        </div>
+      </div>
+      <!-- pop up -->
       <div class="cont">
         <div class="image"></div>
       </div>
@@ -724,6 +777,10 @@
     let data = JSON.parse(localStorage.getItem("view-details"));
     console.log(data);
 
+    const popup = document.querySelector(".popup");
+
+    const closeBtn = document.querySelector(".close-btn");
+
     let cont = document.querySelector(".image");
     let img1 = document.createElement("img");
     img1.src = data.image[0];
@@ -781,62 +838,83 @@
 
     let book = document.getElementById("book");
 
+    let popUpText = document.querySelector(".popup-content>p");
+
+
     book.addEventListener("click", function () {
-      let a = JSON.parse(localStorage.getItem("logged_in")) || "";
+      bookingClickEvent();
+    });
+
+    let a;
+
+    function bookingClickEvent() {
+      a = JSON.parse(localStorage.getItem("logged_in")) || "";
       let imgdata = [];
 
       if (a == "") {
         window.location.href = "./login_page/login.html";
       } else {
-        function fetchUserData() {
-          fetch(usersURL)
-            .then((res) => {
-              return res.json();
-            })
-            .then((dat) => {
-              let filt = [...dat].filter(function (e) {
-                if (e.email == a) {
-                  return true;
-                } else {
-                  return false;
-                }
-              });
-              console.log(filt);
-              let id = filt[0].id;
-
-              imgdata = filt[0].bookings;
-
-              if (!check(imgdata, data.name)) {
-                imgdata.push(data);
-              } else {
-                alert("booking already done");
-              }
-              console.log(imgdata);
-
-              fetch(`https://api-by-nikhil.onrender.com/users/${id}`, {
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                },
-                method: "PATCH",
-                body: JSON.stringify({ bookings: imgdata }),
-              })
-                .then((res) => res.json())
-                .then((data) => {
-                  console.log(data);
-                  window.location.href = "CartPage.html";
-                });
-            })
-
-            .catch((error) => {
-              console.log(error);
-            });
-        }
-
-        fetchUserData();
+        fetchUserData()
       }
-    });
+    }
+let flag;
+    function fetchUserData() {
+      fetch(usersURL)
+        .then((res) => {
+          return res.json();
+        })
+        .then((dat) => {
+          let filt = [...dat].filter(function (e) {
+            if (e.email == a) {
+              return true;
+            } else {
+              return false;
+            }
+          });
+          console.log(filt);
+          let id = filt[0].id;
 
+          imgdata = filt[0].bookings;
+       
+          if (!check(imgdata, data.name)) {
+            imgdata.push(data);
+            flag = 1;
+          } else {
+            // alert("booking already done");
+            flag = 2;
+            
+          }
+          popup.classList.add("active");
+      popup.style.display = "block";
+      if(flag==1){
+        popUpText.innerText = "Added to Cart!";
+      }else{
+        popUpText.innerText="Item Already in Cart!"
+      }
+          console.log(flag)
+          console.log(imgdata);
+
+          fetch(`https://api-by-nikhil.onrender.com/users/${id}`, {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            method: "PATCH",
+            body: JSON.stringify({ bookings: imgdata }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              // window.location.href = "CartPage.html";
+              //return true;
+            });
+        })
+
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    // fetchUserData();
     function check(a, e) {
       return a.some((element) => {
         return element.name === e;
@@ -851,5 +929,28 @@
     discover.addEventListener("click", () => {
       window.location.href = "product.html";
     });
+
+    //show pop-up
+
+//     function showPopup() {
+//       popup.classList.add("active");
+//       popup.style.display = "block";
+//       fetchUserData()
+// console.log(flag)
+//       if (flag==1) {
+//         popUpText.innerText = "Added to Cart!";
+//       } else {
+//         popUpText.innerText = "Item Already In Cart!";
+//       }
+//     }
+
+    // hide the popup
+    function hidePopup() {
+      popup.classList.remove("active");
+      popup.style.display = "none";
+    }
+
+    //event listener for close button
+    closeBtn.addEventListener("click", hidePopup);
   </script>
 </html>
