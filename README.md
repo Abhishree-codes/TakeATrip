@@ -1,4 +1,4 @@
-Project's Title: This is an HTML & CSS project with JavaScript. It is made from the tempelate that we were assigned and the goal was to imitate as much of the original desig as possible.
+Project's Title: This is an HTML & CSS project with JavaScript. It is made from the tempelate that we were assigned and the goal was to imitate as much of the original design as possible.
 
 Project Description: The tempelate we were given was the landing page design of a travel ecommerce website. Based on that, we have tried to clone as much of the design as we could and implemented functionalities.
 
