@@ -28,3 +28,4 @@ Functionalities we would like to implement in the future:
 -Add more filters in the product page and make it more dynamic.
 -Add more designing to individual product page and checkout page.
 -Add a temporary cart functionality for anyone who's not logged in.
+Netlify link https://sunny-cucurucho-f788c1.netlify.app/index.html
