@@ -9,7 +9,7 @@ TakeATrip is a travel ecommerce website. This Project was done by a team of four
 At TakeAtrip, you can view a diverse range of trips to cater to every traveler's wanderlust. From serene beach getaways to adrenaline-pumping expeditions, we have something for every type of adventurer. Explore our extensive collection of destinations, each with its own unique charm and allure.
 
 ## Meet the team!
-- https://github.com/neo1710
+- https://github.com/Abhishree-codes
 - https://github.com/tmasiwal
 - https://github.com/nikhiltaprania
 - https://github.com/ak1code
