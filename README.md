@@ -1,7 +1,5 @@
 
 # TakeATrip
-# Project Title
-
 TakeATrip is a travel ecommerce website. This Project was done by a team of four memebers over the course of five days.
 
 # Project Description
